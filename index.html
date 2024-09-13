@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" href="favicon (1).ico" type="image/x-icon">
+  <link rel="icon" href="favicon (1).ico" type="image/x-icon">
+  <title>
+  </title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- <script src="jquery-1.2.6.pack.js"> </script> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link type="text/css" href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <audio id="loadmusic" autoplay preload="auto" loop>
+    <source src="assets/audio/assets/audio/gods-music-clip.ogg" type="audio/ogg">
+    <source src="assets/audio/gods-music-clip.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="audio1" preload="auto" loop>
+    <source src="assets/audio/Overland Blues - Yoshida Bros - Edit for WSS.ogg" type="audio/ogg">
+    <source src="assets/audio/Overland Blues - Yoshida Bros - Edit for WSS.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="cheer1" preload="auto">
+    <source src="assets/audio/cutie-pie.ogg" type="audio/ogg">
+    <source src="assets/audio/cutie-pie.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="cheer2" preload="auto">
+    <source src="assets/audio/chopper.ogg" type="audio/ogg">
+    <source src="assets/audio/chopper.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="cheer3" preload="auto">
+    <source src="assets/audio/deep-trouble.ogg" type="audio/ogg">
+    <source src="assets/audio/deep-trouble.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="cheer4" preload="auto">
+    <source src="assets/audio/See You At The Party.ogg" type="audio/ogg">
+    <source src="assets/audio/See You At The Party.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="cheer5" preload="auto">
+    <source src="assets/audio/Arnie - Ysoab.ogg" type="audio/ogg">
+    <source src="assets/audio/Arnie - Ysoab.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="winner" preload="auto">
+    <source src="assets/audio/KIDS CHEERING SOUND EFFECT-edit.ogg" type="audio/ogg">
+    <source src="assets/audio/KIDS CHEERING SOUND EFFECT-edit.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="boo1" preload="auto">
+    <source src="assets/audio/boo1.ogg" type="audio/ogg">
+    <source src="assets/audio/boo1.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="boo2" preload="auto">
+    <source src="assets/audio/boo2.ogg" type="audio/ogg">
+    <source src="assets/audio/boo2.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="boo3" preload="auto">
+    <source src="assets/audio/boo3.ogg" type="audio/ogg">
+    <source src="assets/audio/boo3.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="loader">
+    <img id="loader-image" src="assets/images/wss-loader-PREVIEW.jpg" width="65%">
+  </div>
+
+  <div id="bigcontainer">
+    <!-- Gallery Section -->
+    <div id="gallery1">
+      <!-- Directional Arrows -->
+      <div id="enclose">
+        <div id="wrapped">
+          <div id="next1">
+            <img src="assets/images/next.png" id="nthumb1"></div>
+        </div>
+        <div id="next2">
+          <img src="assets/images/thumb7.png" id="nthumb2"></div>
+      </div>
+
+      <div id="enclose2">
+        <div id="wrapped2">
+          <div id="previous1">
+            <img src="assets/images/previous.png" id="pthumb1"></div>
+        </div>
+        <div id="previous2">
+          <img src="assets/images/thumb1.png" id="pthumb2"></div>
+      </div>
+
+      <!-- Zoom Picture, not implemented -->
+      <div id="zoom">
+        <img id="enlarge" src="">
+        <img id="close1" src="">
+      </div>
+
+      <!-- Pictures Container -->
+      <div id="pictures">
+        <div id="picture1">
+          <img src="" id="load1" class="load">
+          <img src="" id="black1" class="black">
+          <canvas id="myCanvas1" class="myCanvas" width="320" height="320"
+            style="z-index:7;border:0px solid green"></canvas>
+        </div>
+
+        <div id="picture1">
+          <img src="" id="load2" class="load">
+          <img src="" id="black2" class="black">
+          <canvas id="myCanvas2" class="myCanvas" width="320" height="320"
+            style="z-index:7;border:0px solid green"></canvas>
+        </div>
+
+        <div id="picture1">
+          <img src="" id="load3" class="load">
+          <img src="" id="black3" class="black">
+          <canvas id="myCanvas3" class="myCanvas" width="320" height="320"
+            style="z-index:7;border:0px solid green"></canvas>
+        </div>
+
+        <div id="picture1">
+          <img src="" id="load4" class="load">
+          <img src="" id="black4" class="black">
+          <canvas id="myCanvas4" class="myCanvas" width="320" height="320"
+            style="z-index:7;border:0px solid green"></canvas>
+        </div>
+
+        <div id="picture1">
+          <img src="" id="load5" class="load">
+          <img src="" id="black5" class="black">
+          <canvas id="myCanvas5" class="myCanvas" width="320" height="100"
+            style="z-index:7;border:0px solid green"></canvas>
+        </div>
+
+        <div id="picture1">
+          <img src="" id="load6" class="load">
+          <img src="" id="black6" class="black">
+          <canvas id="myCanvas6" class="myCanvas" width="320" height="100"
+            style="z-index:7;border:0px solid green"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- The RSVP Page -->
+    <div id="ri">
+      <!-- Main Form Container-->
+      <div id="formcontainer">
+        <!-- Error Pop Ups, not implemented -->
+        <img id="balloon" class="magic" src="assets/images/balloon.png" style="top:140px;visibility:hidden;">
+        <img id="balloon" class="magician" src="assets/images/balloon.png"
+          style="top:140px;left:25px;visibility:hidden;">
+
+        <div id="form1">
+          <span id="form1head">RSVP</span>
+
+          <p align="justify" id="head">Instructions and directions to screening sent upon successful RSVP.
+            Invitations are non-transferrable.
+            If you did not receive an invitation you may request one on the REQUEST INVITATION page. </p>
+
+          <form name="input2" id="input2" style="height:100px">
+            <div id="formback2" style="top:0%;">
+              <div id="inner2" style="width:35%"><span id="innertext2">Confirmation Number</span></div>
+              <input id="select2" type="text" name="bname1">
+            </div>
+
+            <div id="formback3" style="top:0%;">
+              <div id="inner2"><span id="innertext">Last Name</span></div>
+              <input id="select2" type="text" name="bname2">
+            </div>
+
+            <input type="submit" value="SUBMIT" id="button" style="top:60px;">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact1">
+      <!-- Main Form Container -->
+      <div id="formcontainer">
+        <!-- Error Pop Up -->
+        <img id="balloon" src="assets/images/balloon.png" style="top:260px;">
+
+        <div id="form1">
+          <span id="form1head">CONTACT</span>
+          <p align="justify" id="head">For all media and press concerns please use the form below.
+            All fields required except for Company and Title.</p>
+
+          <form name="input3" id="input2" style="top:140px;">
+            <img id="selectimg" src="assets/images/dropdown.png">
+            <div id="formback">
+              <div id="inner"><span id="innertext">Type</span></div>
+              <select id="select1">
+                <option value="loremipsum">Lorem Ipsum ...</option>
+                <option value="loremipsum">Lorem Ipsum ...</option>
+                <option value="loremipsum">Lorem Ipsum ...</option>
+              </select>
+            </div>
+
+            <div id="formback2" style="top:60px;">
+              <div id="inner2"><span id="innertext">First Name</span></div>
+              <input id="select2" type="text" name="cname1">
+            </div>
+
+            <div id="formback3" style="top:60px;">
+              <div id="inner2"><span id="innertext">Last Name</span></div>
+              <input id="select2" type="text" name="cname2">
+            </div>
+
+            <div id="formback4" style="top:120px;">
+              <div id="inner2"><span id="innertext">Company</span></div>
+              <input id="select2" type="text" name="cname3">
+            </div>
+
+            <div id="formback5" style="top:120px;">
+              <div id="inner2"><span id="innertext">Title</span></div>
+              <input id="select2" type="text" name="cname4">
+            </div>
+
+            <div id="formback6" style="top:180px;">
+              <div id="inner2"><span id="innertext">Phone number</span></div>
+              <input id="select2" type="text" name="cname5">
+            </div>
+
+            <div id="formback7" style="top:180px;">
+              <div id="inner2"><span id="innertext">Email address</span></div>
+              <input id="select2" type="text" name="cname6">
+            </div>
+
+            <div id="formback10" style="top:240px;">
+              <div id="inner2"><span id="innertext">Subject</span></div>
+              <input id="select2" type="text" name="cname7">
+            </div>
+
+            <div id="formback11" style="top:300px;">
+              <div id="inner3"><span id="innertext2">Additional Information</span></div>
+              <textarea name="special"
+                id="textarea">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</textarea>
+            </div>
+
+            <input type="submit" value="MESSAGE" id="button" style="top:440px;">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="rsvp">
+      Main Form Container
+      <div id="formcontainer">
+        <img id="balloon" src="assets/images/balloon.png">
+
+        <div id="form1">
+          <span id="form1head">REQUEST INVITATION</span>
+          <p align="justify" id="head">If you would like to be considered for our special screening event please fill
+            out all
+            required fields below and then click
+            the SUBMIT button. Please only submit one request per person.
+            You will receive email confirmation of your request.
+            If you are requesting an invitation on behalf of someone else,
+            please select the appropriate REQUEST TYPE from the
+            drop-down menu.
+            You may submit multiple requests, one for each person, for more than one request. </p>
+
+          <form name="input1" id="input2" style="top:165px;">
+            <img id="selectimg" src="assets/images/dropdown.png">
+            <img id="selectimg2" src="assets/images/dropdown.png">
+            <div id="formback">
+              <div id="inner"><span id="innertext">Request type</span></div>
+              <select id="select1">
+                <option value="loremipsum">Lorem Ipsum ...</option>
+                <option value="loremipsum">Lorem Ipsum ...</option>
+                <option value="loremipsum">Lorem Ipsum ...</option>
+              </select>
+            </div>
+
+            <div id="formback2" style="top:60px">
+              <div id="inner2"><span id="innertext">First Name</span></div>
+              <input id="select2" type="text" name="name1">
+            </div>
+
+            <div id="formback3" style="top:60px">
+              <div id="inner2"><span id="innertext">Last Name</span></div>
+              <input id="select2" type="text" name="name2">
+            </div>
+
+            <div id="formback4" style="top:120px">
+              <div id="inner2"><span id="innertext">Company</span></div>
+              <input id="select2" type="text" name="name3">
+            </div>
+
+            <div id="formback5" style="top:120px">
+              <div id="inner2"><span id="innertext">Title at Company</span></div>
+              <input id="select2" type="text" name="name4">
+            </div>
+
+            <div id="formback6" style="top:180px">
+              <div id="inner2"><span id="innertext">Phone number</span></div>
+              <input id="select2" type="text" name="name5">
+            </div>
+
+            <div id="formback7" style="top:180px">
+              <div id="inner2"><span id="innertext2">Number of Guests Requested</span></div>
+              <select id="select2">
+                <option value="five">5</option>
+                <option value="ten">10</option>
+                <option value="fifteen">15</option>
+              </select>
+            </div>
+
+            <div id="formback8" style="top:240px">
+              <div id="inner3"><span id="innertext2">Additional Information</span></div>
+              <textarea name="special" id="textarea">
+              If you like, please provide us with any information that may 
+              assist us in fulfilling your request. You may leave this field blank.
+              </textarea>
+            </div>
+
+            <div id="formback9" style="top:380px">
+              <div id="inner" style="width:15%"><span id="innertext2">Special Instructions</span></div>
+              <input id="select2" type="text" name="name4" style="width:79%;">
+            </div>
+
+            <input type="submit" value="SUBMIT" id="button" style="top:440px">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="container2">
+    <div id="about1">
+      <!-- Need to remove these images -->
+      <img src="assets/images/aboutus.png" id="aboutus1">
+      <img src="assets/images/pic2.png" id="pic2">
+      <img src="assets/images/high.png" id="high1">
+      <img src="assets/images/popup.png" id="pop">
+
+      <!-- The Game -->
+      <div class="table1">
+        <div class="shape2">
+          <img src="" class="photos" id="test1">
+          <img src="assets/images/shape1.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test2">
+          <img src="assets/images/shape2.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test3">
+          <img src="assets/images/shape3.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test4">
+          <img src="assets/images/shape4.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test5">
+          <img src="assets/images/shape5.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test6">
+          <img src="assets/images/shape1.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test7">
+          <img src="assets/images/shape7.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test8">
+          <img src="assets/images/shape8.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test9">
+          <img src="assets/images/shape9.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test10">
+          <img src="assets/images/shape10.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test11">
+          <img src="assets/images/shape11.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test12">
+          <img src="assets/images/shape12.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test13">
+          <img src="assets/images/shape13.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test14">
+          <img src="assets/images/shape14.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test15">
+          <img src="assets/images/shape15.png" class="tile">
+        </div>
+
+        <div class="shape2">
+          <img src="" class="photos" id="test16">
+          <img src="assets/images/shape16.png" class="tile">
+        </div>
+      </div>
+    </div>
+    <div id="about2">
+      <!-- The Slider -->
+      <div id="gallery">
+        <div id="box1" class="box" style="margin-left:0%">
+          <img src="assets/images/box2.png">
+          <img src="assets/images/img1.png" id="img1">
+        </div>
+
+        <div id="box2" class="box">
+          <img src="assets/images/box4.png">
+          <img src="assets/images/img1.png" id="img1">
+        </div>
+
+        <div id="box3" class="box">
+          <img src="assets/images/box2.png">
+          <img src="assets/images/img3.png" id="img1">
+        </div>
+
+        <div id="box4" class="box">
+          <img src="assets/images/box1.png">
+          <img src="assets/images/img1.png" id="img1">
+        </div>
+
+        <div id="box5" class="box">
+          <img src="assets/images/box2.png">
+          <img src="assets/images/img2.png" id="img1">
+        </div>
+
+        <div id="box6" class="box">
+          <img src="assets/images/box3.png">
+          <img src="assets/images/img3.png" id="img1">
+        </div>
+
+        <div id="box7" class="box">
+          <img src="assets/images/box4.png">
+          <img src="assets/images/img1.png" id="img1">
+        </div>
+
+        <div id="box8" class="box">
+          <img src="assets/images/box2.png">
+          <img src="assets/images/img3.png" id="img1">
+        </div>
+
+        <div id="box9" class="box">
+          <img src="assets/images/box2.png">
+          <img src="assets/images/img1.png" id="img1">
+        </div>
+
+        <div id="box10" class="box">
+          <img src="assets/images/box2.png">
+          <img src="assets/images/img3.png" id="img1">
+        </div>
+
+        <div id="box11" class="box">
+          <img src="assets/images/box4.png">
+          <img src="assets/images/img1.png" id="img1">
+        </div>
+
+        <div id="box12" class="box">
+          <img src="assets/images/box1.png">
+          <img src="assets/images/img1.png" id="img1">
+        </div>
+      </div>
+      <!-- Background Fade -->
+      <img src="assets/images/bgimage.png" id="bg">
+    </div>
+  </div>
+
+  <div id="wrapper">
+    <div id="container">
+      <!-- Parralax Home Page Set Up -->
+      <ul id="scene" data-friction-x="0.1" data-friction-y="0.1" data-origin-y="0.73" class="scene"
+        style=" margin:0;padding:0;">
+        <!-- The Ware House Layer -->
+        <li class="layer" data-depth="0.70">
+          <img id="background" src="assets/images/WSS3_1-blue2.jpg" width=100% height=100%>
+        </li>
+
+        <!-- 2 Chains Animated and Pillar -->
+        <li class="layer" data-depth="0.40">
+          <img src="assets/images/pillarsnew.png" width=100% height=100% class="image1">
+
+          <span id="chain1">
+            <img src="assets/images/chainsnew1.png" width=100% height=100% id="chain"
+              style=" border: 1px solid rgba(0, 0, 0, 0);">
+          </span>
+
+          <span id="chain3">
+            <img src="assets/images/chainsnew3.png" width=100% height=100% id="chain"
+              style=" border: 1px solid rgba(0, 0, 0, 0);">
+          </span>
+        </li>
+
+        <!-- Light From the Window and 2 Dust Particles Animated -->
+        <li class="layer" data-depth="0.70">
+          <img src="assets/images/light4.png" width=100% height=100% class="image1">
+
+          <div id="dustcon">
+            <img class="image1" id="dust1" src="assets/images/dust1.png" width=100% height=100%
+              style=" border: 1px solid rgba(0, 0, 0, 0);">
+            <img class="image1" id="dust2" src="assets/images/dust2.png" width=100% height=100%
+              style=" border: 1px solid rgba(0, 0, 0, 0);">
+            <img class="image1" id="dust3" src="assets/images/dust3.png" width=100% height=100%
+              style=" border: 1px solid rgba(0, 0, 0, 0);">
+          </div>
+
+          <div id="dustcon2">
+            <img class="image1" id="dust3" src="assets/images/dust4.png" width=100% height=100%
+              style=" border: 1px solid rgba(0, 0, 0, 0);">
+          </div>
+        </li>
+
+
+        <!-- 1 Animated Chain, Static Chain and Pillars -->
+        <li class="layer" data-depth="0.55">
+          <span id="chain2">
+            <img src="assets/images/chainsnew2.png" width=100% height=100% id="chain5"
+              style=" border: 1px solid rgba(0, 0, 0, 0);">
+          </span>
+
+          <img src="assets/images/chain4.png" id="chain4">
+
+          <img src="assets/images/pillarsnew2.png" id="pillar">
+        </li>
+
+
+        <!-- Upper Navigation Background -->
+        <li class="layer" data-depth="0.48">
+          <span id="graphic1">
+            <img src="assets/images/bg-upper-nav.png" width=100% height=100%></span>
+        </li>
+
+        <!-- Mckay Stewart -->
+        <li class="layer" data-depth="0.30">
+          <img src="assets/images/character.png" id="char">
+        </li>
+
+        <!-- Footer Background -->
+        <li class="layer" data-depth="0.48">
+          <span id="graphic" href="http://www.w3schools.com">
+            <img src="assets/images/bg-footer-left.png" width=100% height=100%></span>
+        </li>
+
+        <!-- Title, Text, Footer Text, Footer Image, Upper Menu, Trailer -->
+        <li id="wanted" class="layer" data-depth="0.35">
+          <img src="assets/images/logo.png" class="logo">
+          <img src="assets/images/logo1.png" id="logo">
+          <img src="assets/images/blackscreen.png" id="blackout">
+
+          <div id="footer2">
+            <p align="justify">&trade; and &#169 2014
+              Origns of light Film Corporation. All rights reserved.
+              The materials on this website are not to be sold, traded or given away.
+              Any copying, manipulation, publishing,
+              or other transfer of these materials,
+              except as specifically provided in the terms and conditions of use,
+              is strictly prohibited. Website by <a href="http://halocreativeagency.com/" target="_blank">Halo
+                Creative</a>, a Los Angeles design firm."</p>
+          </div>
+
+          <img id="footer" src="assets/images/footer2.png">
+
+          <div class="nav-top">
+            <ul type="none">
+              <li class="menutop" id="menu0">
+                <a href="#">
+                  HOME
+                  <!-- <img src="assets/images/home.png" width=auto height=100% style="border:none;"> -->
+                </a>
+              </li>
+              <li class="menutop" id="menu1">
+                <a href="#">
+                  PHOTO GALLERY
+                  <!-- <img src="assets/images/pg.png" width=auto height=100% style="border:none;"> -->
+                </a>
+              </li>
+              <li class="menutop" id="menu2"><a href="#">
+                  <!-- <img src="assets/images/about.png" width=auto height=100%
+                    style="border:none;"> -->
+                  ABOUT
+                </a>
+              </li>
+              <li class="menutop" id="menu3"><a href="#">
+                  <!-- <img src="assets/images/request.png" width=auto height=100%
+                    style="border:none;"> -->
+                  REQUEST INVITATION
+                </a>
+              </li>
+              <li class="menutop" id="menu4">
+                <a href="#">
+                  <!-- <img src="assets/images/rsvp.png" width=auto height=100% style="border:none;"> -->
+                  RSVP
+                </a>
+              </li>
+              <li class="menutop" id="menu5">
+                <a href="#">
+                  <!-- <img src="assets/images/contact.png" width=auto height=100%
+                    style="border:none;"> -->
+                  CONTACT
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="wrap">
+            <a id="icon-1" class="icon" href="javascript:void(0)">
+              <img class="shown-image" src="assets/images/icon1.png" width=100%>
+              <img class="hidden-image" src="assets/images/icon1h.png" width=100%>
+            </a>
+
+            <a id="icon-2" class="icon" href="javascript:void(0)">
+              <img class="shown-image" src="assets/images/icon2.png" width=100%>
+              <img class="hidden-image" src="assets/images/icon2h.png" width=100%>
+            </a>
+
+            <a id="icon-3" class="icon" href="javascript:void(0)">
+              <img class="shown-image" src="assets/images/icon3.png" width=100%>
+              <img class="hidden-image" src="assets/images/icon3h.png" width=100%>
+            </a>
+
+            <a id="icon-4" class="icon" href="javascript:void(0)">
+              <img class="shown-image" src="assets/images/icon4.png" width=100%>
+              <img class="hidden-image" src="assets/images/icon4h.png" width=100%>
+            </a>
+
+            <a id="icon-5" class="icon" href="javascript:void(0)">
+              <img class="shown-image" src="assets/images/icon5.png" width=100%>
+              <img class="hidden-image" src="assets/images/icon5h.png" width=100%>
+            </a>
+
+            <a id="icon-6" class="icon" href="javascript:void(0)">
+              <img class="shown-image" src="assets/images/icon6.png" width=100%>
+              <img class="hidden-image" src="assets/images/icon6h.png" width=100%>
+            </a>
+
+            <a id="icon-7" class="icon">
+              <img class="shown-image" id="music-shown-image" src="assets/images/musicoff.png" width=100%>
+              <img class="hidden-image" id="music-hidden-image" src="assets/images/musicoffhover.png" width=100%>
+            </a>
+
+          </div>
+
+          <a id="trailer" class="icon" href="http://www.w3schools.com">
+            <img src="assets/images/movie-trailer.png" width=auto height=100% style="border:none;position:absolute;">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="assets/js/jquery.parallax.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- <script src="https://code.jquery.com/jquery-migrate-1.4.1.js"
+    integrity="sha256-xoqICUSqAwguiLvmx993R+5F9Qb6d352+0FwmgulqTU=" crossorigin="anonymous"></script> -->
+
+  <script>
+    $('#scene').parallax();
+  </script>
+
+  <script>
+    $(window).on("load", function () {
+      //Index is used, because these are javascript functions, index retreives the Native DOM Elemet
+      $('#audio1')[0].play(); //Not working, prior to interaction
+      $('#loadmusic')[0].pause();
+      $('#loader').fadeOut(1750, function () {
+        $('#loader').remove();
+      })
+      doOnOrientationChange();
+    });
+  </script>
+
+</body>
+
+</html>

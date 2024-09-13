@@ -1,0 +1,5 @@
+# Ignore the folder named 'example_folder'
+archive/
+
+# Ignore the file named 'example_file.txt'
+.htaccess
