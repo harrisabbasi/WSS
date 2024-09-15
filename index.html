@@ -503,8 +503,7 @@
   <div id="wrapper">
     <div id="container">
       <!-- Parralax Home Page Set Up -->
-      <ul id="scene" data-friction-x="0.1" data-friction-y="0.1" data-origin-y="0.73" class="scene"
-        style=" margin:0;padding:0;">
+      <ul id="scene" data-friction-x="0.1" data-friction-y="0.1" data-origin-y="0.73">
         <!-- The Ware House Layer -->
         <li class="layer" data-depth="0.70">
           <img id="background" src="assets/images/WSS3_1-blue2.jpg" width=100% height=100%>
@@ -512,47 +511,41 @@
 
         <!-- 2 Chains Animated and Pillar -->
         <li class="layer" data-depth="0.40">
-          <img src="assets/images/pillarsnew.png" width=100% height=100% class="image1">
+          <img src="assets/images/pillarsnew.png" width=100% height=100% class="topleft">
 
-          <span id="chain1">
-            <img src="assets/images/chainsnew1.png" width=100% height=100% id="chain"
-              style=" border: 1px solid rgba(0, 0, 0, 0);">
+          <span id="chain-1">
+            <img src="assets/images/chainsnew1.png" width=100% height=100% class="chain-animation">
           </span>
 
-          <span id="chain3">
-            <img src="assets/images/chainsnew3.png" width=100% height=100% id="chain"
+          <span id="chain-3">
+            <img src="assets/images/chainsnew3.png" width=100% height=100% class="chain-animation"
               style=" border: 1px solid rgba(0, 0, 0, 0);">
           </span>
         </li>
 
         <!-- Light From the Window and 2 Dust Particles Animated -->
         <li class="layer" data-depth="0.70">
-          <img src="assets/images/light4.png" width=100% height=100% class="image1">
+          <img src="assets/images/light4.png" width=100% height=100% class="topleft">
 
-          <div id="dustcon">
-            <img class="image1" id="dust1" src="assets/images/dust1.png" width=100% height=100%
-              style=" border: 1px solid rgba(0, 0, 0, 0);">
-            <img class="image1" id="dust2" src="assets/images/dust2.png" width=100% height=100%
-              style=" border: 1px solid rgba(0, 0, 0, 0);">
-            <img class="image1" id="dust3" src="assets/images/dust3.png" width=100% height=100%
-              style=" border: 1px solid rgba(0, 0, 0, 0);">
+          <div id="dust-container">
+            <img class="topleft" id="dust-1" src="assets/images/dust1.png" width=100% height=100%>
+            <img class="topleft" id="dust-2" src="assets/images/dust2.png" width=100% height=100%>
+            <img class="topleft" class="dust-3" src="assets/images/dust3.png" width=100% height=100%>
           </div>
 
-          <div id="dustcon2">
-            <img class="image1" id="dust3" src="assets/images/dust4.png" width=100% height=100%
-              style=" border: 1px solid rgba(0, 0, 0, 0);">
+          <div id="dust-container-2">
+            <img class="topleft" class="dust-3" src="assets/images/dust4.png" width=100% height=100%>
           </div>
         </li>
 
 
         <!-- 1 Animated Chain, Static Chain and Pillars -->
         <li class="layer" data-depth="0.55">
-          <span id="chain2">
-            <img src="assets/images/chainsnew2.png" width=100% height=100% id="chain5"
-              style=" border: 1px solid rgba(0, 0, 0, 0);">
+          <span id="chain-3">
+            <img src="assets/images/chainsnew2.png" width=100% height=100% class="chain-animation-2">
           </span>
 
-          <img src="assets/images/chain4.png" id="chain4">
+          <img src="assets/images/chain4.png" id="chain-4">
 
           <img src="assets/images/pillarsnew2.png" id="pillar">
         </li>
@@ -560,83 +553,74 @@
 
         <!-- Upper Navigation Background -->
         <li class="layer" data-depth="0.48">
-          <span id="graphic1">
+          <span id="graphic-1">
             <img src="assets/images/bg-upper-nav.png" width=100% height=100%></span>
         </li>
 
         <!-- Mckay Stewart -->
         <li class="layer" data-depth="0.30">
-          <img src="assets/images/character.png" id="char">
+          <img src="assets/images/character.png" id="character">
         </li>
 
         <!-- Footer Background -->
         <li class="layer" data-depth="0.48">
-          <span id="graphic" href="http://www.w3schools.com">
-            <img src="assets/images/bg-footer-left.png" width=100% height=100%></span>
+          <span id="graphic-2" href="javascript:void(0)">
+            <img src=" assets/images/bg-footer-left.png" width=100% height=100%></span>
         </li>
 
         <!-- Title, Text, Footer Text, Footer Image, Upper Menu, Trailer -->
-        <li id="wanted" class="layer" data-depth="0.35">
-          <img src="assets/images/logo.png" class="logo">
-          <img src="assets/images/logo1.png" id="logo">
-          <img src="assets/images/blackscreen.png" id="blackout">
+        <li class="layer" data-depth="0.35">
+          <img src="assets/images/logo.png" id="logo-1">
+          <img src="assets/images/logo1.png" id="logo-2">
+          <img src="assets/images/blackscreen.png" id="black-screen">
 
-          <div id="footer2">
+          <div id="footer-1">
             <p align="justify">&trade; and &#169 2014
               Origns of light Film Corporation. All rights reserved.
               The materials on this website are not to be sold, traded or given away.
               Any copying, manipulation, publishing,
               or other transfer of these materials,
               except as specifically provided in the terms and conditions of use,
-              is strictly prohibited. Website by <a href="http://halocreativeagency.com/" target="_blank">Halo
+              is strictly prohibited. Website by <a href="javascript:void(0)" target="_blank">Halo
                 Creative</a>, a Los Angeles design firm."</p>
           </div>
 
-          <img id="footer" src="assets/images/footer2.png">
+          <img id="footer-image" src="assets/images/footer2.png">
 
-          <div class="nav-top">
+          <div class="header-menu">
             <ul type="none">
-              <li class="menutop" id="menu0">
+              <li class="menu-item" id="menu-item-1">
                 <a href="#">
                   HOME
-                  <!-- <img src="assets/images/home.png" width=auto height=100% style="border:none;"> -->
                 </a>
               </li>
-              <li class="menutop" id="menu1">
+              <li class="menu-item" id="menu-item-2">
                 <a href="#">
                   PHOTO GALLERY
-                  <!-- <img src="assets/images/pg.png" width=auto height=100% style="border:none;"> -->
                 </a>
               </li>
-              <li class="menutop" id="menu2"><a href="#">
-                  <!-- <img src="assets/images/about.png" width=auto height=100%
-                    style="border:none;"> -->
+              <li class="menu-item" id="menu-item-3"><a href="#">
                   ABOUT
                 </a>
               </li>
-              <li class="menutop" id="menu3"><a href="#">
-                  <!-- <img src="assets/images/request.png" width=auto height=100%
-                    style="border:none;"> -->
+              <li class="menu-item" id="menu-item-4"><a href="#">
                   REQUEST INVITATION
                 </a>
               </li>
-              <li class="menutop" id="menu4">
+              <li class="menu-item" id="menu-item-5">
                 <a href="#">
-                  <!-- <img src="assets/images/rsvp.png" width=auto height=100% style="border:none;"> -->
                   RSVP
                 </a>
               </li>
-              <li class="menutop" id="menu5">
+              <li class="menu-item" id="menu-item-6">
                 <a href="#">
-                  <!-- <img src="assets/images/contact.png" width=auto height=100%
-                    style="border:none;"> -->
                   CONTACT
                 </a>
               </li>
             </ul>
           </div>
 
-          <div id="wrap">
+          <div id="icon-container">
             <a id="icon-1" class="icon" href="javascript:void(0)">
               <img class="shown-image" src="assets/images/icon1.png" width=100%>
               <img class="hidden-image" src="assets/images/icon1h.png" width=100%>
@@ -674,8 +658,8 @@
 
           </div>
 
-          <a id="trailer" class="icon" href="http://www.w3schools.com">
-            <img src="assets/images/movie-trailer.png" width=auto height=100% style="border:none;position:absolute;">
+          <a id="trailer" class="icon" href="javascript:void(0)>
+            <img src=" assets/images/movie-trailer.png" width=auto height=100%>
           </a>
         </li>
       </ul>

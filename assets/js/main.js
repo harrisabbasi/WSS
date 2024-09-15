@@ -127,7 +127,7 @@ $(document).ready(function () {
 
 
   // If About is pressed in the Header Menu
-  $("#menu2").click(function () {
+  $("#menu-item-3").click(function () {
     if (aboutcheck == 0) {
       choosePic();
       aboutcheck++;
@@ -181,8 +181,8 @@ $(document).ready(function () {
 
       // Can be replaced with Timeout, checks off the items left when About Page has come into View
       var interval99 = setInterval(function () {
-        $("#blackout").css('display', 'block'); //Fades the Screen
-        $(".nav-top").css('z-index', 100); //Keeps the Header Menu above the Fade or Visible
+        $("#black-screen").css('display', 'block'); //Fades the Screen
+        $(".header-menu").css('z-index', 100); //Keeps the Header Menu above the Fade or Visible
         $("#icon7").css('z-index', 100); // Keeps the Music Icon Above the Fade or Visible
         $("#bigcontainer").css("pointer-events", "none"); //The Home Page Becomes Unclickable or Interactable
 
@@ -228,7 +228,7 @@ $(document).ready(function () {
         $("#about1").css("top", "-100%");
         $("#about1").css("left", "0%");
 
-        $("#blackout").css('display', 'initial'); // Fades the Screen 
+        $("#black-screen").css('display', 'initial'); // Fades the Screen 
         $("#about1").css("top", "-100%"); // Repeating
         $("#container2").css('display', 'initial');
 
@@ -238,7 +238,7 @@ $(document).ready(function () {
         }, 500);
 
         // Items Checked off when About Page is in View
-        $(".nav-top").css('z-index', 100);
+        $(".header-menu").css('z-index', 100);
         $("#icon7").css('z-index', 100);
         $(".icon").css("pointer-events", "none");
         $("#icon7").css("pointer-events", "visible");
@@ -391,7 +391,7 @@ $(document).ready(function () {
   });
 
   // When Gallery is Pressed in the Naviagation Menu
-  $("#menu1").click(function () {
+  $("#menu-item-2").click(function () {
     $("#bigcontainer").css("pointer-events", "visible"); //The Other Container, apart from Hompage, becomes interactable
 
     //loadercounter checks if its the first encounter with Page, to load the images
@@ -410,7 +410,7 @@ $(document).ready(function () {
     if ($("#pictures").css('opacity') == 0) {
       $("#zoom").css("display", "none");
       document.getElementById('enlarge').src = "";
-      $("#blackout").css('display', 'none');
+      $("#black-screen").css('display', 'none');
       $("#pictures").css('opacity', '1.0');
     };
 
@@ -583,7 +583,7 @@ $(document).ready(function () {
 
     //Hides the Page Transitioned from, after animation
     var interval91 = setInterval(function () {
-      $("#blackout").css('display', 'none');
+      $("#black-screen").css('display', 'none');
       if ($("#container2").css('display') == "block") {
         $("#container2").css('display', 'none');
       }
@@ -644,8 +644,8 @@ $(document).ready(function () {
   //Opens the Zoomed Picture, since cursor not becoming pointer (cross-origin error), temp the check is off
   $(".myCanvas").click(function (e) {
     if ($(this).css('cursor') == "auto") {
-      $("#blackout").css('display', 'block');
-      $(".nav-top").css('z-index', 100);
+      $("#black-screen").css('display', 'block');
+      $(".header-menu").css('z-index', 100);
       $("#icon7").css('z-index', 100);
 
       $("#pictures").css('opacity', '0');
@@ -701,7 +701,7 @@ $(document).ready(function () {
   $("#close1").click(function (e) {
     $("#zoom").css("display", "none");
     document.getElementById('enlarge').src = "";
-    $("#blackout").css('display', 'none');
+    $("#black-screen").css('display', 'none');
     $("#pictures").css('opacity', '1.0');
     if (gallerycheck2 == 1) {
       document.getElementById('nthumb2').src = "assets/images/thumb7.png";
@@ -715,7 +715,7 @@ $(document).ready(function () {
   });
 
   //When Request Invitation is selected
-  $("#menu3").click(function () {
+  $("#menu-item-4").click(function () {
 
     //Coming from any page other than Homepage
     if ($("#container2").css('display') == "block" || $("#ri").css('display') == "block" || $("#contact1").css('display') == "block" ||
@@ -775,8 +775,8 @@ $(document).ready(function () {
 
       //After the transition is complete, Request Invitation page is in-view, check of the remaining events
       var interval101 = setInterval(function () {
-        $("#blackout").css('display', 'block');
-        $(".nav-top").css('z-index', 100);
+        $("#black-screen").css('display', 'block');
+        $(".header-menu").css('z-index', 100);
         $("#icon7").css('z-index', 100);
         $("#bigcontainer").css("pointer-events", "none");
 
@@ -799,10 +799,10 @@ $(document).ready(function () {
 
     } else {
       $("#rsvp").css("left", "0%");
-      $("#blackout").css('display', 'initial');
+      $("#black-screen").css('display', 'initial');
       $("#rsvp").css('display', 'initial');
       $("#scene").parallax('disable');
-      $(".nav-top").css('z-index', 100);
+      $(".header-menu").css('z-index', 100);
       $("#icon7").css('z-index', 100);
       $(".icon").css("pointer-events", "none");
       $("#icon7").css("pointer-events", "visible");
@@ -810,7 +810,7 @@ $(document).ready(function () {
   });
 
   //When RSVP page is selected, the code is similar to when Request Invitation is pressed
-  $("#menu4").click(function () {
+  $("#menu-item-5").click(function () {
     if ($("#container2").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#contact1").css('display') == "block" ||
       $("#gallery1").css('display') == "block") {
 
@@ -862,8 +862,8 @@ $(document).ready(function () {
 
 
       var interval102 = setInterval(function () {
-        $("#blackout").css('display', 'block');
-        $(".nav-top").css('z-index', 100);
+        $("#black-screen").css('display', 'block');
+        $(".header-menu").css('z-index', 100);
         $("#icon7").css('z-index', 100);
         $("#bigcontainer").css("pointer-events", "none");
         if ($("#container2").css('display') == "block") {
@@ -883,10 +883,10 @@ $(document).ready(function () {
       }, 500);
     } else {
       $("#ri").css("left", "0%");
-      $("#blackout").css('display', 'initial');
+      $("#black-screen").css('display', 'initial');
       $("#ri").css('display', 'initial');
       $("#scene").parallax('disable');
-      $(".nav-top").css('z-index', 100);
+      $(".header-menu").css('z-index', 100);
       $("#icon7").css('z-index', 100);
       $(".icon").css("pointer-events", "none");
       $("#icon7").css("pointer-events", "visible");
@@ -894,7 +894,7 @@ $(document).ready(function () {
   });
 
   //When Contact is selected in Header, code is similar to RI and RSVP Selection
-  $("#menu5").click(function () {
+  $("#menu-item-6").click(function () {
 
     if ($("#container2").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#ri").css('display') == "block" ||
       $("#gallery1").css('display') == "block") {
@@ -938,8 +938,8 @@ $(document).ready(function () {
       }, 500, "linear");
 
       var interval103 = setInterval(function () {
-        $("#blackout").css('display', 'block');
-        $(".nav-top").css('z-index', 100);
+        $("#black-screen").css('display', 'block');
+        $(".header-menu").css('z-index', 100);
         $("#icon7").css('z-index', 100);
         $("#bigcontainer").css("pointer-events", "none");
         if ($("#container2").css('display') == "block") {
@@ -960,10 +960,10 @@ $(document).ready(function () {
     } else {
 
       $("#contact1").css("left", "0%");
-      $("#blackout").css('display', 'block');
+      $("#black-screen").css('display', 'block');
       $("#contact1").css('display', 'block');
       $("#scene").parallax('disable');
-      $(".nav-top").css('z-index', 100);
+      $(".header-menu").css('z-index', 100);
       $("#icon7").css('z-index', 100);
       $(".icon").css("pointer-events", "none");
       $("#icon7").css("pointer-events", "visible");
@@ -971,9 +971,9 @@ $(document).ready(function () {
   });
 
   //When Homepage is selected in Header
-  $("#menu0").click(function () {
+  $("#menu-item-1").click(function () {
 
-    $("#blackout").css('display', 'none');
+    $("#black-screen").css('display', 'none');
     $("#scene").parallax('enable');
 
     $("#bigcontainer").css("pointer-events", "visible");
@@ -1196,7 +1196,7 @@ $(document).ready(function () {
     } else {
       audioplayer.pause();
       $("#music-hidden-image").attr("src", "assets/images/musicoffhover.png");
-      $("#music-shown-image").attr("src", "assets/images/musichoff.png");
+      $("#music-shown-image").attr("src", "assets/images/musicoff.png");
     }
   });
 

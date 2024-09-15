@@ -35,7 +35,7 @@ body {
     padding: 0;
 }
 
-.menutop a {
+.menu-item a {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
@@ -141,7 +141,7 @@ body {
     pointer-events: none;
 }
 
-@font-face {
+/* @font-face {
     font-family: font2;
     src: url("Oswald-Regular.ttf") format("truetype");
 }
@@ -149,7 +149,7 @@ body {
 @font-face {
     font-family: font3;
     src: url("Lato-Reg.ttf") format("truetype");
-}
+} */
 
 #formcontainer {
     width: 1025px;
@@ -306,7 +306,7 @@ body {
     position: absolute;
     width: 100%;
     height: 40px;
-    background-image: url("assets/images/formback.png");
+    background-image: url("../images/formback.png");
     background-size: 100% 100%;
 
     font-size: 0;
@@ -316,7 +316,7 @@ body {
     position: absolute;
     width: 48.4%;
     height: 40px;
-    background-image: url("assets/images/inputback.png");
+    background-image: url("../images/inputback.png");
     background-size: 100% 100%;
 
     font-size: 0;
@@ -326,7 +326,7 @@ body {
     position: absolute;
     width: 48.4%;
     height: 40px;
-    background-image: url("assets/images/inputback.png");
+    background-image: url("../images/inputback.png");
     background-size: 100% 100%;
 
     left: 51.6%;
@@ -337,7 +337,7 @@ body {
     position: absolute;
     width: 48.4%;
     height: 40px;
-    background-image: url("assets/images/inputback.png");
+    background-image: url("../images/inputback.png");
     background-size: 100% 100%;
     top: 26%;
     left: 0%;
@@ -348,7 +348,7 @@ body {
     position: absolute;
     width: 48.4%;
     height: 40px;
-    background-image: url("assets/images/inputback.png");
+    background-image: url("../images/inputback.png");
     background-size: 100% 100%;
     top: 26%;
     left: 51.6%;
@@ -359,7 +359,7 @@ body {
     position: absolute;
     width: 48.4%;
     height: 40px;
-    background-image: url("assets/images/inputback.png");
+    background-image: url("../images/inputback.png");
     background-size: 100% 100%;
     top: 37%;
     left: 0%;
@@ -370,7 +370,7 @@ body {
     position: absolute;
     width: 48.4%;
     height: 40px;
-    background-image: url("assets/images/inputback.png");
+    background-image: url("../images/inputback.png");
     background-size: 100% 100%;
     top: 37%;
     left: 51.6%;
@@ -381,7 +381,7 @@ body {
     position: absolute;
     width: 48.4%;
     height: 7%;
-    background-image: url("assets/images/inputback.png");
+    background-image: url("../images/inputback.png");
     background-size: 100% 100%;
     top: 48%;
     left: 0%;
@@ -392,7 +392,7 @@ body {
     position: absolute;
     width: 100%;
     height: 21%;
-    background-image: url("assets/images/textarea.png");
+    background-image: url("../images/textarea.png");
     background-size: 100% 100%;
     top: 59%;
     left: 0%;
@@ -405,7 +405,7 @@ body {
     position: absolute;
     width: 100%;
     height: 120px;
-    background-image: url("assets/images/textarea.png");
+    background-image: url("../images/textarea.png");
     background-size: 100% 100%;
     top: 48%;
     left: 0%;
@@ -430,7 +430,7 @@ body {
     position: absolute;
     width: 100%;
     height: 40px;
-    background-image: url("assets/images/formback.png");
+    background-image: url("../images/formback.png");
     background-size: 100% 100%;
     top: 73%;
     font-size: 0;
@@ -907,7 +907,7 @@ body {
     left: -8%;
 }
 
-#blackout {
+#black-screen {
     position: absolute;
     z-index: 2;
     display: none;
@@ -920,7 +920,7 @@ body {
 #scene {
     width: 100%;
     height: 100%;
-    margin: 0;
+    margin: 0px;
     padding: 0px;
 }
 
@@ -955,7 +955,7 @@ body {
     height: 68%;
 }
 
-#chain4 {
+#chain-4 {
     position: absolute;
     top: 41.01%;
     left: 62.29%;
@@ -963,13 +963,13 @@ body {
     height: 30%;
 }
 
-.image1 {
+.topleft {
     position: absolute;
     top: 0;
     left: 0;
 }
 
-#chain1 {
+#chain-1 {
     position: absolute;
     top: 11.52%;
     left: 17%;
@@ -977,7 +977,7 @@ body {
     height: 88.48%;
 }
 
-#chain2 {
+#chain-3 {
     position: absolute;
     top: 23%;
     left: 28.9%;
@@ -985,7 +985,7 @@ body {
     height: 56.6%;
 }
 
-#chain3 {
+#chain-3 {
     position: absolute;
     top: 0%;
     left: 71.9%;
@@ -993,7 +993,7 @@ body {
     height: 100%;
 }
 
-#chain {
+.chain-animation {
     -webkit-transform-origin: 50% 0%;
     -moz-transform-origin: 50 0%;
     -o-transform-origin: 50 0%;
@@ -1069,7 +1069,7 @@ body {
     }
 }
 
-#chain5 {
+.chain-animation-2 {
     -webkit-transform-origin: 50% 0%;
     -moz-transform-origin: 50 0%;
     -o-transform-origin: 50 0%;
@@ -1145,7 +1145,7 @@ body {
     }
 }
 
-#dustcon {
+#dust-container {
     position: absolute;
     top: 22.65%;
     left: 2.6%;
@@ -1154,7 +1154,7 @@ body {
     overflow: hidden;
 }
 
-#dustcon2 {
+#dust-container-2 {
     position: absolute;
     top: 46.09%;
     left: 37%;
@@ -1164,7 +1164,7 @@ body {
     overflow: hidden;
 }
 
-#dust1 {
+#dust-1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -1234,7 +1234,7 @@ body {
     }
 }
 
-#dust2 {
+#dust-2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -1244,7 +1244,7 @@ body {
     animation: mymove2 48s linear 2s infinite normal;
 }
 
-#dust3 {
+.dust-3 {
     position: absolute;
     top: 0;
     left: 0;
@@ -1410,7 +1410,7 @@ body {
     }
 }
 
-#graphic {
+#graphic-2 {
     position: absolute;
     top: 71.68%;
     width: 65.1%;
@@ -1418,7 +1418,7 @@ body {
     left: -5%;
 }
 
-#graphic1 {
+#graphic-1 {
     position: absolute;
     left: 24.9%;
     width: 75.1%;
@@ -1433,7 +1433,12 @@ body {
     left: 65.5%;
 }
 
-#footer {
+#trailer img {
+    position: absolute;
+    border: none;
+}
+
+#footer-image {
     position: absolute;
     top: 81.66%;
     width: auto;
@@ -1442,24 +1447,24 @@ body {
     opacity: 0.9;
 }
 
-@font-face {
+/* @font-face {
     font-family: font1;
     src: url("ProximaNova-Light.otf") format("opentype");
-}
+} */
 
-#footer2 {
+#footer-1 {
     position: absolute;
     top: 82.03%;
     width: 32.55%;
     height: auto;
     left: 36.04%;
-
-    font-family: font1;
-    font-size: 13px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 11px;
     color: #ffffff;
 }
 
-#char {
+#character {
     position: absolute;
     width: auto;
     height: 78.125%;
@@ -1468,7 +1473,7 @@ body {
     left: 38.625%;
 }
 
-#logo {
+#logo-2 {
     position: absolute;
     top: 49.57%;
     width: auto;
@@ -1476,7 +1481,7 @@ body {
     left: 20%;
 }
 
-.logo {
+#logo-1 {
     position: absolute;
     top: 19.5%;
     width: auto;
@@ -1484,7 +1489,7 @@ body {
     left: 20%;
 }
 
-.nav-top {
+.header-menu {
     width: 50%;
     position: absolute;
     top: 15.07%;
@@ -1492,29 +1497,29 @@ body {
     height: 3%;
 }
 
-.nav-top ul {
+.header-menu ul {
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.nav-top ul li {
+.header-menu ul li {
     padding-left: 2%;
     float: left;
 }
 
-.nav-top ul li a {
+.header-menu ul li a {
     width: 100%;
     height: 100%;
 }
 
-.nav-top ul li a:hover {}
+.header-menu ul li a:hover {}
 
-#menu0 {
+#menu-item-1 {
     height: 100%;
 }
 
-.menutop {
+.menu-item {
     /* -webkit-transition: -webkit-transform 300ms linear;
     -moz-transition: -moz-transform 300ms linear;
     -ms-transition: -ms-transform 300ms linear;
@@ -1522,7 +1527,7 @@ body {
     transition: transform 175ms linear;
 }
 
-#menu0:hover {
+#menu-item-1:hover {
     -webkit-transform: scale(1.2, 1.2);
     -moz-transform: scale(1.2, 1.2);
     -ms-transform: scale(1.2, 1.2);
@@ -1530,7 +1535,7 @@ body {
     transform: scale(1.2, 1.2);
 }
 
-#menu1:hover {
+#menu-item-2:hover {
     -webkit-transform: scale(1.2, 1.2);
     -moz-transform: scale(1.2, 1.2);
     -ms-transform: scale(1.2, 1.2);
@@ -1538,7 +1543,7 @@ body {
     transform: scale(1.2, 1.2);
 }
 
-#menu2:hover {
+#menu-item-3:hover {
     -webkit-transform: scale(1.2, 1.2);
     -moz-transform: scale(1.2, 1.2);
     -ms-transform: scale(1.2, 1.2);
@@ -1546,7 +1551,7 @@ body {
     transform: scale(1.2, 1.2);
 }
 
-#menu3:hover {
+#menu-item-4:hover {
     -webkit-transform: scale(1.2, 1.2);
     -moz-transform: scale(1.2, 1.2);
     -ms-transform: scale(1.2, 1.2);
@@ -1554,7 +1559,7 @@ body {
     transform: scale(1.2, 1.2);
 }
 
-#menu4:hover {
+#menu-item-5:hover {
     -webkit-transform: scale(1.2, 1.2);
     -moz-transform: scale(1.2, 1.2);
     -ms-transform: scale(1.2, 1.2);
@@ -1562,7 +1567,7 @@ body {
     transform: scale(1.2, 1.2);
 }
 
-#menu5:hover {
+#menu-item-6:hover {
     -webkit-transform: scale(1.2, 1.2);
     -moz-transform: scale(1.2, 1.2);
     -ms-transform: scale(1.2, 1.2);
@@ -1570,27 +1575,27 @@ body {
     transform: scale(1.2, 1.2);
 }
 
-#menu1 {
+#menu-item-2 {
     height: 100%;
 }
 
-#menu2 {
+#menu-item-3 {
     height: 100%;
 }
 
-#menu3 {
+#menu-item-4 {
     height: 100%;
 }
 
-#menu4 {
+#menu-item-5 {
     height: 100%;
 }
 
-#menu5 {
+#menu-item-6 {
     height: 100%;
 }
 
-#wrap {
+#icon-container {
     position: absolute;
     height: 7.6%;
     width: 31.5%;
@@ -1638,7 +1643,7 @@ body {
     opacity: 0;
 }
 
-#footer2 a {
+#footer-1 a {
     text-decoration: none;
     color: #ffffff;
 
@@ -1649,7 +1654,7 @@ body {
     transition: color 300ms ease;
 }
 
-#footer2 a:hover {
+#footer-1 a:hover {
     color: #00ffff;
 }
 
@@ -1658,8 +1663,8 @@ body {
 }
 
 @media (max-width: 1590px) {
-    #footer2 {
-        font-size: 13px;
+    #footer-1 {
+        font-size: 11px;
     }
 
     #form1head {
