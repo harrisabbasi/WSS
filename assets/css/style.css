@@ -45,7 +45,7 @@ body {
     text-decoration: none;
 }
 
-#container2 {
+#about-pages-container {
     position: absolute;
     height: 87%;
     overflow: hidden;
@@ -56,11 +56,56 @@ body {
     left: 0;
     max-width: 1920px;
     max-height: 800px;
-
     padding: 0px;
     z-index: 3;
     display: none;
     pointer-events: none;
+}
+
+.game-container {
+    position: absolute;
+    top: 18.5%;
+    left: 20%;
+    width: 55%;
+    height: 70%;
+    /* border: 1px solid white; */
+}
+
+.game-info-container {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 50%;
+    font-family: "Lato", sans-serif;
+    color: #fff;
+}
+
+.game-info-container h1 {
+    font-size: 20px;
+}
+
+.game-info-container h2 {
+    font-size: 16px;
+}
+
+.game-info-container p {
+    font-size: 13px;
+}
+
+.game {
+    position: absolute;
+    top: 10%;
+    right: 0%;
+    width: 40%;
+}
+
+#skip-game {
+    pointer-events: visible;
+    cursor: pointer;
+}
+
+#skip-game:hover {
+    color: lightblue;
 }
 
 #bigcontainer {
@@ -661,7 +706,7 @@ body {
     -ms-interpolation-mode: nearest-neighbor; // IE
 }
 
-#about1 {
+#about-page-1 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -719,29 +764,25 @@ body {
     top: 35%;
 }
 
-#pop {
+#start-info {
     position: absolute;
-
-    height: 5.375%;
-    left: 46.4%;
-    top: 18.75%;
+    /* height: 5.375%; */
+    left: 0%;
+    top: -50px;
 }
 
-.table1 {
+.game-tiles {
     position: absolute;
-    left: 47.91%;
-    top: 23.75%;
-
-    height: 45%;
-    width: 20.05%;
-
+    left: 0%;
+    top: 0%;
+    /* height: 45%; */
+    width: 100%;
     font-size: 0;
-
-    overflow: auto;
+    /* overflow: auto; */
     pointer-events: visible;
 }
 
-.shape2 {
+.tile-container {
     position: relative;
 
     width: 21.77%;
@@ -777,7 +818,7 @@ body {
     backface-visibility: hidden;
 }
 
-.photos {
+.hidden-pic {
     margin: 0;
     padding: 0;
     width: 100%;

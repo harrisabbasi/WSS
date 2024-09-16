@@ -29,8 +29,8 @@ function choosePic() {
     "images/image6.png", "images/image7.png", "images/image8.png"
   );
 
-  var ids = new Array("test1", "test2", "test3", "test4", "test5", "test7", "test8",
-    "test9", "test10", "test11", "test12", "test13", "test14", "test15", "test16", "test6"
+  var ids = new Array("hidden-pic-1", "hidden-pic-2", "hidden-pic-3", "hidden-pic-4", "hidden-pic-5", "hidden-pic-7", "hidden-pic-8",
+    "hidden-pic-9", "hidden-pic-10", "hidden-pic-11", "hidden-pic-12", "hidden-pic-13", "hidden-pic-14", "hidden-pic-15", "hidden-pic-16", "hidden-pic-6"
   );
 
   // The ids array gets a picture assigned, and than is spliced, until all its values (ids) have picture assigned
@@ -168,14 +168,14 @@ $(document).ready(function () {
       // Repetitive, but sets up About 1 to be animated from top
       if ($("#rsvp").css('display') == "block" || $("#ri").css('display') == "block" || $("#contact1").css('display') == "block" ||
         $("#gallery1").css('display') == "block") {
-        $("#about1").css("top", "-100%");
-        $("#about1").css("left", "0%");
+        $("#about-page-1").css("top", "-100%");
+        $("#about-page-1").css("left", "0%");
       }
 
-      $("#container2").css('display', 'initial');
+      $("#about-pages-container").css('display', 'initial');
 
       // Top Down Animation of About 1
-      $("#about1").animate({
+      $("#about-page-1").animate({
         top: '0%'
       }, 500, "linear");
 
@@ -210,7 +210,7 @@ $(document).ready(function () {
 
     } else {
       // If About is pressed when the Current Page is the About Page
-      if ($("#container2").css('display') == "block") {
+      if ($("#about-pages-container").css('display') == "block") {
 
         // If About 2 is opened return to About 1
         if ($("#about2").css("left") == "0px") {
@@ -218,22 +218,22 @@ $(document).ready(function () {
             left: '-100%'
           }, 500);
 
-          $("#about1").animate({
+          $("#about-page-1").animate({
             left: '0%'
           }, 500);
         }
       } else { // The Current Page is the Home Page
 
         // Sets up About Page for Animation
-        $("#about1").css("top", "-100%");
-        $("#about1").css("left", "0%");
+        $("#about-page-1").css("top", "-100%");
+        $("#about-page-1").css("left", "0%");
 
         $("#black-screen").css('display', 'initial'); // Fades the Screen 
-        $("#about1").css("top", "-100%"); // Repeating
-        $("#container2").css('display', 'initial');
+        $("#about-page-1").css("top", "-100%"); // Repeating
+        $("#about-pages-container").css('display', 'initial');
 
         // The Animation
-        $("#about1").animate({
+        $("#about-page-1").animate({
           top: '0%'
         }, 500);
 
@@ -248,8 +248,8 @@ $(document).ready(function () {
   });
 
   // I am Retard Option Selected
-  $("#pic2").click(function () {
-    $("#about1").animate({
+  $("#skip-game").click(function () {
+    $("#about-page-1").animate({
       left: '100%'
     }, 500);
     $("#about2").animate({
@@ -568,10 +568,10 @@ $(document).ready(function () {
     }
 
     //Both About Pages transition
-    if ($("#container2").css('display') == "block") {
+    if ($("#about-pages-container").css('display') == "block") {
       $("#gallery1").css("left", "-100%");
-      if ($("#about1").css("left") == "0px") {
-        $("#about1").animate({
+      if ($("#about-page-1").css("left") == "0px") {
+        $("#about-page-1").animate({
           left: '100%'
         }, 500, "linear");
       } else {
@@ -584,8 +584,8 @@ $(document).ready(function () {
     //Hides the Page Transitioned from, after animation
     var interval91 = setInterval(function () {
       $("#black-screen").css('display', 'none');
-      if ($("#container2").css('display') == "block") {
-        $("#container2").css('display', 'none');
+      if ($("#about-pages-container").css('display') == "block") {
+        $("#about-pages-container").css('display', 'none');
       }
       if ($("#ri").css('display') == "block") {
         $("#ri").css('display', 'none');
@@ -718,15 +718,15 @@ $(document).ready(function () {
   $("#menu-item-4").click(function () {
 
     //Coming from any page other than Homepage
-    if ($("#container2").css('display') == "block" || $("#ri").css('display') == "block" || $("#contact1").css('display') == "block" ||
+    if ($("#about-pages-container").css('display') == "block" || $("#ri").css('display') == "block" || $("#contact1").css('display') == "block" ||
       $("#gallery1").css('display') == "block") {
 
       $("#bigcontainer").css("pointer-events", "visible"); //Make the Parent Container Interactive
 
       //Coming from About Page 1 or 2, trigger the page's animation
-      if ($("#container2").css('display') == "block") {
-        if ($("#about1").css("left") == "0px") {
-          $("#about1").animate({
+      if ($("#about-pages-container").css('display') == "block") {
+        if ($("#about-page-1").css("left") == "0px") {
+          $("#about-page-1").animate({
             left: '-100%'
           }, 500, "linear");
         } else {
@@ -758,7 +758,7 @@ $(document).ready(function () {
       }
 
       //Setup Request Invitation Page, if coming from About Pages or Gallery
-      if ($("#container2").css('display') == "block" || $("#gallery1").css('display') == "block") {
+      if ($("#about-pages-container").css('display') == "block" || $("#gallery1").css('display') == "block") {
         $("#rsvp").css("left", "100%");
       }
 
@@ -780,8 +780,8 @@ $(document).ready(function () {
         $("#icon7").css('z-index', 100);
         $("#bigcontainer").css("pointer-events", "none");
 
-        if ($("#container2").css('display') == "block") {
-          $("#container2").css('display', 'none');
+        if ($("#about-pages-container").css('display') == "block") {
+          $("#about-pages-container").css('display', 'none');
         }
         if ($("#ri").css('display') == "block") {
           $("#ri").css('display', 'none');
@@ -811,15 +811,15 @@ $(document).ready(function () {
 
   //When RSVP page is selected, the code is similar to when Request Invitation is pressed
   $("#menu-item-5").click(function () {
-    if ($("#container2").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#contact1").css('display') == "block" ||
+    if ($("#about-pages-container").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#contact1").css('display') == "block" ||
       $("#gallery1").css('display') == "block") {
 
       $("#bigcontainer").css("pointer-events", "visible");
 
-      if ($("#container2").css('display') == "block") {
+      if ($("#about-pages-container").css('display') == "block") {
 
-        if ($("#about1").css("left") == "0px") {
-          $("#about1").animate({
+        if ($("#about-page-1").css("left") == "0px") {
+          $("#about-page-1").animate({
             left: '-100%'
           }, 500, "linear");
         } else {
@@ -847,7 +847,7 @@ $(document).ready(function () {
         }, 500, "linear");
       }
 
-      if ($("#container2").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#gallery1").css('display') == "block") {
+      if ($("#about-pages-container").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#gallery1").css('display') == "block") {
         $("#ri").css("left", "100%");
       }
 
@@ -866,8 +866,8 @@ $(document).ready(function () {
         $(".header-menu").css('z-index', 100);
         $("#icon7").css('z-index', 100);
         $("#bigcontainer").css("pointer-events", "none");
-        if ($("#container2").css('display') == "block") {
-          $("#container2").css('display', 'none');
+        if ($("#about-pages-container").css('display') == "block") {
+          $("#about-pages-container").css('display', 'none');
         }
         if ($("#rsvp").css('display') == "block") {
           $("#rsvp").css('display', 'none');
@@ -896,13 +896,13 @@ $(document).ready(function () {
   //When Contact is selected in Header, code is similar to RI and RSVP Selection
   $("#menu-item-6").click(function () {
 
-    if ($("#container2").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#ri").css('display') == "block" ||
+    if ($("#about-pages-container").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#ri").css('display') == "block" ||
       $("#gallery1").css('display') == "block") {
       $("#bigcontainer").css("pointer-events", "visible");
 
-      if ($("#container2").css('display') == "block") {
-        if ($("#about1").css("left") == "0px") {
-          $("#about1").animate({
+      if ($("#about-pages-container").css('display') == "block") {
+        if ($("#about-page-1").css("left") == "0px") {
+          $("#about-page-1").animate({
             left: '-100%'
           }, 500, "linear");
         } else {
@@ -942,8 +942,8 @@ $(document).ready(function () {
         $(".header-menu").css('z-index', 100);
         $("#icon7").css('z-index', 100);
         $("#bigcontainer").css("pointer-events", "none");
-        if ($("#container2").css('display') == "block") {
-          $("#container2").css('display', 'none');
+        if ($("#about-pages-container").css('display') == "block") {
+          $("#about-pages-container").css('display', 'none');
         }
         if ($("#rsvp").css('display') == "block") {
           $("#rsvp").css('display', 'none');
@@ -981,9 +981,9 @@ $(document).ready(function () {
 
     //Animations of Page you are coming from, with condition check 
 
-    if ($("#container2").css('display') == "block") {
-      if ($("#about1").css("left") == "0px") {
-        $("#about1").animate({
+    if ($("#about-pages-container").css('display') == "block") {
+      if ($("#about-page-1").css("left") == "0px") {
+        $("#about-page-1").animate({
           left: '100%'
         }, 500, "linear");
       } else {
@@ -1021,8 +1021,8 @@ $(document).ready(function () {
     // Events Check off after Homepage is in View
     var interval1000 = setInterval(function () {
       $("#bigcontainer").css("pointer-events", "none");
-      if ($("#container2").css('display') == "block") {
-        $("#container2").css('display', 'none');
+      if ($("#about-pages-container").css('display') == "block") {
+        $("#about-pages-container").css('display', 'none');
       }
       if ($("#rsvp").css('display') == "block") {
         $("#rsvp").css('display', 'none');
@@ -1044,12 +1044,14 @@ $(document).ready(function () {
   var scope = $(".tile");
 
   //The Code when Tile is Selected, it has alot of logic
-  $(".shape2").click(function () {
-    $(".shape2").unbind("click");
+  $(".tile-container").click(function () {
+    $(".tile-container").unbind("click"); // The Game has started, now it becomes un-clickable
+
+    //This is the game start code
     $(".tile").css({
       'transform': 'rotateY(-180deg)  '
     });
-    $(".photos").css({
+    $(".hidden-pic").css({
       'transform': 'rotateY(0deg)  '
     });
 
@@ -1057,13 +1059,15 @@ $(document).ready(function () {
       $(".tile").css({
         'transform': 'rotateY(0deg)  '
       });
-      $(".photos").css({
+      $(".hidden-pic").css({
         'transform': 'rotateY(180deg)  '
       });
       clearInterval(interval);
     }, 4000);
 
+    //The Click Function is set up, which runs now when user clicks a tile (the scope variable is used, so that the function is still able to be called, despite being with a function)
     scope.click(function () {
+      //First Tile Try
       if (new1 == 0) {
         if (new2 == 1) {
           new2 = 0;
@@ -1072,23 +1076,26 @@ $(document).ready(function () {
         $(this).css({
           'transform': 'rotateY(-180deg)  '
         });
-        $(this).parent().children(".photos").css({
+        $(this).parent().children(".hidden-pic").css({
           'transform': 'rotateY(0deg)  '
         });
-        source = $(this).parent().children(".photos").attr('src');
+        source = $(this).parent().children(".hidden-pic").attr('src');
         previous = $(this);
         new1 = 1;
       } else {
+        //Second Tile Try 
 
-        if ($(this).parent().children(".photos").attr('src') == source) {
+        //There is a match
+        if ($(this).parent().children(".hidden-pic").attr('src') == source) {
 
           $(this).css({
             'transform': 'rotateY(-180deg)  '
           });
-          $(this).parent().children(".photos").css({
+          $(this).parent().children(".hidden-pic").css({
             'transform': 'rotateY(0deg)  '
           });
 
+          //Play the random cheer sound
           var interval1001 = setInterval(function () {
 
             if (gamecheck != 8) {
@@ -1100,12 +1107,14 @@ $(document).ready(function () {
           }, 1000);
 
           new1 = 0;
+
+          //Check if game is over
           gamecheck++;
           if (gamecheck == 8) {
             document.getElementById("winner").play();
             var interval3 = setInterval(function () {
 
-              $("#about1").animate({
+              $("#about-page-1").animate({
                 left: '100%'
               }, 500);
               $("#about2").animate({
@@ -1115,19 +1124,22 @@ $(document).ready(function () {
             }, 2500);
           }
         } else {
+          //There was no match
 
+          //Show the Tile
           $(this).css({
             'transform': 'rotateY(-180deg)  '
           });
-          $(this).parent().children(".photos").css({
+          $(this).parent().children(".hidden-pic").css({
             'transform': 'rotateY(0deg)  '
           });
 
           current = $(this);
           new1 = 0;
           new2 = 1;
-          scope.css("pointer-events", "none");
+          scope.css("pointer-events", "none"); //Make the Tile Unclickable for now
 
+          //Reverse the tiles
           var interval2 = setInterval(function () {
 
             var randomnumber = Math.floor((Math.random() * 3));
@@ -1135,17 +1147,18 @@ $(document).ready(function () {
             current.css({
               'transform': 'rotateY(0deg)  '
             });
-            current.parent().children(".photos").css({
+            current.parent().children(".hidden-pic").css({
               'transform': 'rotateY(-180deg)  '
             });
 
             previous.css({
               'transform': 'rotateY(0deg)  '
             });
-            previous.parent().children(".photos").css({
+            previous.parent().children(".hidden-pic").css({
               'transform': 'rotateY(-180deg)  '
             });
 
+            //Make the tile clickable again
             var interval4 = setInterval(function () {
 
               scope.css("pointer-events", "visible");
