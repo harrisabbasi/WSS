@@ -16,37 +16,39 @@ var cheerarray = new Array("cheer1", "cheer2",
   "cheer3", "cheer4", "cheer5");
 
 // The Function for the Game, randomly sets up the hidden images
-function choosePic() {
+function setup_board() {
 
   // Two arrays, for two sets of images
-  var myPix = new Array("images/image1.png", "images/image2.png",
+  let tile_images = new Array("images/image1.png", "images/image2.png",
     "images/image3.png", "images/image4.png", "images/image5.png",
     "images/image6.png", "images/image7.png", "images/image8.png"
   );
 
-  var myPix2 = new Array("images/image1.png", "images/image2.png",
+  let tile_images_second_copy = new Array("images/image1.png", "images/image2.png",
     "images/image3.png", "images/image4.png", "images/image5.png",
     "images/image6.png", "images/image7.png", "images/image8.png"
   );
 
-  var ids = new Array("hidden-pic-1", "hidden-pic-2", "hidden-pic-3", "hidden-pic-4", "hidden-pic-5", "hidden-pic-7", "hidden-pic-8",
+  let tile_ids = new Array("hidden-pic-1", "hidden-pic-2", "hidden-pic-3", "hidden-pic-4", "hidden-pic-5", "hidden-pic-7", "hidden-pic-8",
     "hidden-pic-9", "hidden-pic-10", "hidden-pic-11", "hidden-pic-12", "hidden-pic-13", "hidden-pic-14", "hidden-pic-15", "hidden-pic-16", "hidden-pic-6"
   );
 
-  // The ids array gets a picture assigned, and than is spliced, until all its values (ids) have picture assigned
+  // The tile_ids array gets a picture assigned, and than is spliced, until all its values (tile_ids) have picture assigned
   for (var i = 0; i < 8; i++) {
-    var randomNum = Math.floor((Math.random() * myPix.length));
-    var randomNum2 = Math.floor((Math.random() * ids.length));
-    document.getElementById(ids[randomNum2]).src = myPix[randomNum];
-    myPix.splice(randomNum, 1);
-    ids.splice(randomNum2, 1);
+    let rand = Math.floor((Math.random() * tile_images.length));
+    let rand_2 = Math.floor((Math.random() * tile_ids.length));
+
+    document.getElementById(tile_ids[rand_2]).src = tile_images[rand];
+    tile_images.splice(rand, 1);
+    tile_ids.splice(rand_2, 1);
   }
   for (var i = 0; i < 8; i++) {
-    var randomNum = Math.floor((Math.random() * myPix2.length));
-    var randomNum2 = Math.floor((Math.random() * ids.length));
-    document.getElementById(ids[randomNum2]).src = myPix2[randomNum];
-    myPix2.splice(randomNum, 1);
-    ids.splice(randomNum2, 1);
+    let rand = Math.floor((Math.random() * tile_images_second_copy.length));
+    let rand_2 = Math.floor((Math.random() * tile_ids.length));
+
+    document.getElementById(tile_ids[rand_2]).src = tile_images_second_copy[rand];
+    tile_images_second_copy.splice(rand, 1);
+    tile_ids.splice(rand_2, 1);
   }
 
 }
@@ -129,7 +131,7 @@ $(document).ready(function () {
   // If About is pressed in the Header Menu
   $("#menu-item-3").click(function () {
     if (aboutcheck == 0) {
-      choosePic();
+      setup_board();
       aboutcheck++;
     }
 
@@ -1041,13 +1043,17 @@ $(document).ready(function () {
   });
 
   //The Game Code
-  var scope = $(".tile");
+  let game_is_interactive = false
+  let is_first_tile = true;
+  let tiles_matched = 0
 
-  //The Code when Tile is Selected, it has alot of logic
+  //Tile Container is clicked, the game starts
   $(".tile-container").click(function () {
-    $(".tile-container").unbind("click"); // The Game has started, now it becomes un-clickable
 
-    //This is the game start code
+    $(".tile-container").unbind("click"); // The Game has started, now it becomes un-clickable
+    game_is_interactive = true;
+
+    //Show the complete board
     $(".tile").css({
       'transform': 'rotateY(-180deg)  '
     });
@@ -1055,23 +1061,23 @@ $(document).ready(function () {
       'transform': 'rotateY(0deg)  '
     });
 
-    var interval = setInterval(function () {
+    //Hide the Board
+    setTimeout(function () {
       $(".tile").css({
         'transform': 'rotateY(0deg)  '
       });
       $(".hidden-pic").css({
         'transform': 'rotateY(180deg)  '
       });
-      clearInterval(interval);
     }, 4000);
+  });
 
-    //The Click Function is set up, which runs now when user clicks a tile (the scope variable is used, so that the function is still able to be called, despite being with a function)
-    scope.click(function () {
+  //The game has started now and a tile is selected
+  $(".tile").click(function () {
+
+    if (game_is_interactive) {
       //First Tile Try
-      if (new1 == 0) {
-        if (new2 == 1) {
-          new2 = 0;
-        }
+      if (is_first_tile) {
 
         $(this).css({
           'transform': 'rotateY(-180deg)  '
@@ -1079,14 +1085,17 @@ $(document).ready(function () {
         $(this).parent().children(".hidden-pic").css({
           'transform': 'rotateY(0deg)  '
         });
-        source = $(this).parent().children(".hidden-pic").attr('src');
-        previous = $(this);
-        new1 = 1;
+
+        //Save the First Tile State
+        image_source = $(this).parent().children(".hidden-pic").attr('src');
+        previous_tile = $(this);
+
+        is_first_tile = false;
       } else {
         //Second Tile Try 
 
         //There is a match
-        if ($(this).parent().children(".hidden-pic").attr('src') == source) {
+        if ($(this).parent().children(".hidden-pic").attr('src') == image_source) {
 
           $(this).css({
             'transform': 'rotateY(-180deg)  '
@@ -1096,23 +1105,22 @@ $(document).ready(function () {
           });
 
           //Play the random cheer sound
-          var interval1001 = setInterval(function () {
+          setTimeout(function () {
 
-            if (gamecheck != 8) {
+            if (tiles_matched != 8) {
               var randomnumber2 = Math.floor((Math.random() * 5));
               document.getElementById(cheerarray[randomnumber2]).play();
             }
 
-            clearInterval(interval1001);
           }, 1000);
 
-          new1 = 0;
+
 
           //Check if game is over
-          gamecheck++;
-          if (gamecheck == 8) {
+          tiles_matched++;
+          if (tiles_matched == 8) {
             document.getElementById("winner").play();
-            var interval3 = setInterval(function () {
+            setTimeout(function () {
 
               $("#about-page-1").animate({
                 left: '100%'
@@ -1120,9 +1128,11 @@ $(document).ready(function () {
               $("#about2").animate({
                 left: '0%'
               }, 500);
-              clearInterval(interval3);
+
             }, 2500);
           }
+
+          is_first_tile = true;
         } else {
           //There was no match
 
@@ -1134,56 +1144,42 @@ $(document).ready(function () {
             'transform': 'rotateY(0deg)  '
           });
 
-          current = $(this);
-          new1 = 0;
-          new2 = 1;
-          scope.css("pointer-events", "none"); //Make the Tile Unclickable for now
+          current_tile = $(this);
+          is_first_tile = true;
+
+          $(".tile").css("pointer-events", "none"); //Make all tiles Unclickable for now
 
           //Reverse the tiles
-          var interval2 = setInterval(function () {
+          setTimeout(function () {
 
-            var randomnumber = Math.floor((Math.random() * 3));
+            let randomnumber = Math.floor((Math.random() * 3));
             document.getElementById(booarray[randomnumber]).play();
-            current.css({
+            current_tile.css({
               'transform': 'rotateY(0deg)  '
             });
-            current.parent().children(".hidden-pic").css({
+            current_tile.parent().children(".hidden-pic").css({
               'transform': 'rotateY(-180deg)  '
             });
 
-            previous.css({
+            previous_tile.css({
               'transform': 'rotateY(0deg)  '
             });
-            previous.parent().children(".hidden-pic").css({
+            previous_tile.parent().children(".hidden-pic").css({
               'transform': 'rotateY(-180deg)  '
             });
 
-            //Make the tile clickable again
-            var interval4 = setInterval(function () {
+            //Make all tiles clickable again
+            setTimeout(function () {
 
-              scope.css("pointer-events", "visible");
+              $(".tile").css("pointer-events", "visible");
 
-              clearInterval(interval4);
 
             }, 500);
 
-            clearInterval(interval2);
           }, 1000);
         }
       }
-    });
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
   });
 
