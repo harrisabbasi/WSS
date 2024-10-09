@@ -1348,4 +1348,62 @@ $(document).ready(function () {
   $('form').on('submit', function (event) {
     event.preventDefault(); // Prevent form submission
   });
+
+  //Debug Code
+
+  let carousel_pos = 0;
+  let marker_down = 0
+  let marker_dis = 0;
+  let swing_dur = 25;
+  //let first_card;
+  //let last_card;
+
+  function return_swing_duration(rate_of_change) {
+    if (rate_of_change < 50) {
+      return 25;
+    } else {
+      if (rate_of_change < 100) {
+        return 50;
+      } else {
+        return 125;
+      }
+    }
+  }
+
+  $(".carousel").mousedown(function (e) {
+    e.preventDefault();
+
+    //first_card = $(".carousel div:first-child");
+    //last_card = $(".carousel div:last-child").detach();
+
+    //$(".carousel").prepend(last_card);
+    //console.log(last_card.offset());
+
+    marker_down = e.pageX;
+
+    // The Mouse Move Function Fires, only when the mouse is kept pressed
+    $(".carousel").mousemove(function (e) {
+
+      rate_of_change = Math.abs((marker_down - e.pageX) - marker_dis);
+      marker_dis = marker_down - e.pageX;
+
+      swing_dur = return_swing_duration(rate_of_change);
+
+      //console.log(rate_of_change);
+      //console.log(swing_dur);
+
+      //loop_algorithm()
+
+      //I can change the carousel element with the card element and it can still work fine
+      $(".carousel").animate({
+        left: carousel_pos + (marker_dis) + 'px'
+      }, 25, "swing");
+    });
+  });
+
+  // Turns off the firing of Mouse Move function when mouse is released
+  $(document).mouseup(function (e) {
+    $(".carousel").off("mousemove");
+    carousel_pos += marker_dis
+  });
 });
