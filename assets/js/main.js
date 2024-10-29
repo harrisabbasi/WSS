@@ -1355,6 +1355,12 @@ $(document).ready(function () {
   let marker_down = 0
   let marker_dis = 0;
   let swing_dur = 25;
+  let window_width = $(window).width();
+  let loop_element_first;
+  let loop_element_last;
+  let loop_element_first_offset;
+  let loop_element_last_offset;
+  let carousel_interval;
   //let first_card;
   //let last_card;
 
@@ -1368,6 +1374,53 @@ $(document).ready(function () {
         return 125;
       }
     }
+  }
+
+  function loop_algorithm() {
+    let id;
+    loop_element_first = $(".loop-first");
+    loop_element_last = $(".loop-last");
+
+    console.log(loop_element_first.offset());
+
+    loop_element_first_offset = loop_element_first.offset().left;
+    loop_element_last_offset = loop_element_last.offset().left;
+
+    if (loop_element_first_offset > -50) {
+      loop_element_last.css("left", "-=1610px"); //Relative
+
+      loop_element_last.removeClass("loop-last");
+      loop_element_first.removeClass("loop-first");
+
+      id = loop_element_last.data("order");
+      //Remove classes from both elements
+      if (id == 1) {
+        id = 7;
+      } else {
+        id--;
+      }
+      $("#card-" + id).addClass("loop-last"); //Compensate when the Value is 1
+      loop_element_last.addClass("loop-first");
+    }
+
+    //The Other Way Round
+    if (loop_element_first_offset < -275) {
+      loop_element_first.css("left", "+=1610px"); //Relative
+
+      id = loop_element_first.data("order");
+      //Remove classes from both elements
+      loop_element_last.removeClass("loop-last");
+      loop_element_first.removeClass("loop-first");
+
+      if (id == 7) {
+        id = 1;
+      } else {
+        id++;
+      }
+      $("#card-" + id).addClass("loop-first"); //Compensate when the Value is 1
+      loop_element_first.addClass("loop-last");
+    }
+
   }
 
   $(".carousel").mousedown(function (e) {
@@ -1390,14 +1443,17 @@ $(document).ready(function () {
       swing_dur = return_swing_duration(rate_of_change);
 
       //console.log(rate_of_change);
-      //console.log(swing_dur);
-
-      //loop_algorithm()
+      //console.log(swing_dur); 
 
       //I can change the carousel element with the card element and it can still work fine
       $(".carousel").animate({
         left: carousel_pos + (marker_dis) + 'px'
-      }, 25, "swing");
+      }, swing_dur, "swing");
+
+      carousel_interval = setInterval(function () {
+        loop_algorithm();
+      }, 25)
+
     });
   });
 
@@ -1405,5 +1461,7 @@ $(document).ready(function () {
   $(document).mouseup(function (e) {
     $(".carousel").off("mousemove");
     carousel_pos += marker_dis
+    clearInterval(carousel_interval);
+
   });
 });

@@ -1742,16 +1742,21 @@ body {
     height: 78.75%;
     pointer-events: visible;
     position: absolute;
-    overflow: hidden;
+    /* overflow: hidden; */
     top: 21.25%;
     right: 0;
     bottom: 0;
     left: 0%;
+    margin-left: -210px;
 }
 
 .card {
     position: relative;
     width: 220px;
     float: left;
-    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#card-1 {
+    /* margin-left: 0px; */
 }
