@@ -108,7 +108,7 @@ body {
     color: lightblue;
 }
 
-#bigcontainer {
+#container-multiple {
     position: absolute;
     height: 87%;
     overflow: hidden;
@@ -525,7 +525,7 @@ body {
     border-radius: 4px;
 }
 
-#gallery1 {
+#gallery-container {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -544,13 +544,13 @@ body {
     pointer-events: none;
 }
 
-#next1 {
+#arrow-1 {
     width: 100%;
     position: relative;
     top: 0;
 }
 
-#enclose {
+#directional-next {
     position: absolute;
     width: 13%;
     height: 18%;
@@ -559,54 +559,54 @@ body {
     pointer-events: visible;
 }
 
-#wrapped {
+#arrow-wrapper-1 {
     position: absolute;
     width: 44.07%;
     top: 10%;
     left: 7.86%;
 }
 
-#wrapped2 {
+#arrow-wrapper-2 {
     position: absolute;
     width: 44.07%;
     top: 10%;
     left: 48.07%;
 }
 
-#next2 {
+#thumbnail-1 {
     position: absolute;
     width: 48.07%;
     top: 10%;
     left: 51.93%;
 }
 
-#nthumb1 {
+#arrow-img-1 {
     width: 100%;
 
     cursor: pointer;
 }
 
-#nthumb2 {
-    width: 100%;
-
-    cursor: pointer;
-    z-index: 5;
-}
-
-#pthumb1 {
-    width: 100%;
-
-    cursor: pointer;
-}
-
-#pthumb2 {
+#thumbnail-img-1 {
     width: 100%;
 
     cursor: pointer;
     z-index: 5;
 }
 
-#enclose2 {
+#arrow-img-2 {
+    width: 100%;
+
+    cursor: pointer;
+}
+
+#thumbnail-img-2 {
+    width: 100%;
+
+    cursor: pointer;
+    z-index: 5;
+}
+
+#directional-back {
     position: absolute;
     width: 13%;
     height: 18%;
@@ -616,24 +616,23 @@ body {
     pointer-events: visible;
 }
 
-#previous1 {
+#arrow-2 {
     width: 100%;
     position: relative;
     top: 0;
 }
 
-#previous2 {
+#thumbnail-2 {
     position: relative;
     width: 48.07%;
     top: 10%;
     left: 0%;
 }
 
-#zoom {
+#zoom-wrapper {
     display: none;
     width: 50%;
     height: 70%;
-
     position: absolute;
     margin: auto;
     top: 0;
@@ -642,15 +641,14 @@ body {
     left: 0%;
     font-size: 0;
     pointer-events: visible;
-
     z-index: 10;
 }
 
-#enlarge {
+#zoom-image {
     width: 100%;
 }
 
-#close1 {
+#close-arrow {
     width: 6.25%;
     left: 93.75%;
     top: 0%;
@@ -658,7 +656,7 @@ body {
     cursor: pointer;
 }
 
-#pictures {
+#gallery-pictures {
     width: 50%;
     height: 70%;
 
@@ -672,32 +670,32 @@ body {
     pointer-events: visible;
 }
 
-#picture1 {
+#picture-con {
     position: relative;
     width: 33.3%;
 
     float: left;
 }
 
-#picture1 img {
+#picture-con img {
     width: 100%;
 }
 
-.black {
+.fade-img {
     position: absolute;
     width: 100%;
-
     top: 0;
     left: 0;
     opacity: 0;
     z-index: 3;
 }
 
-.myCanvas {
+.canvas-search {
     position: absolute;
     top: 0;
     left: 0;
-
+    z-index: 7;
+    opacity: 0;
     image-rendering: optimizeSpeed; // Older versions of FF
     image-rendering: -moz-crisp-edges; // FF 6.0+
     image-rendering: -webkit-optimize-contrast; // Webkit
@@ -716,7 +714,7 @@ body {
     left: 0;
 }
 
-#about2 {
+#about-page-2 {
     position: absolute;
     width: 100%;
     height: 100%;
