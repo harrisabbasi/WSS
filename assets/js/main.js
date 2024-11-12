@@ -56,7 +56,7 @@ function setup_board() {
 var check = 0;
 var x = 0;
 var a = 0;
-var y = 0;
+// var y = 0;
 var d = 0;
 var c, imgObject, y, z;
 var ctx1, ctx2, ctx3, ctx4, ctx5, ctx5, ctx6;
@@ -68,13 +68,13 @@ var previous, current;
 var new2 = 0;
 var offset, offset1;
 var p, m;
-var checked;
+var canvas_loaded;
 var mult = 1;
 var mult2 = 1;
 var marleft;
 var check2 = 0;
-var gallerycheck;
-var gallerycheck2 = 1;
+var picture_position;
+var gallery_slide = 1;
 var aboutcheck = 0;
 var menucheck = 0;
 var loader = 0;
@@ -239,7 +239,7 @@ $(document).ready(function () {
           top: '0%'
         }, 500);
 
-        // Items Checked off when About Page is in View
+        // Items checked off when About Page is in View
         $(".header-menu").css('z-index', 100);
         $("#icon7").css('z-index', 100);
         $(".icon").css("pointer-events", "none");
@@ -274,7 +274,7 @@ $(document).ready(function () {
         "assets/images/picture7.png", "assets/images/picture8.png", "assets/images/picture9.png", "assets/images/picture10.png", "assets/images/picture11.png", "assets/images/picture12.png");
       loadercounter++;
     }
-    gallerycheck2 = 1;
+    gallery_slide = 1;
 
     //If the zoom-wrapper Window was opened, in a prior interaction, close up and setup page fresh
     if ($("#gallery-pictures").css('opacity') == 0) {
@@ -348,7 +348,7 @@ $(document).ready(function () {
 
     //The Canvas setup Ends
 
-    checked = 1;
+    canvas_loaded = 1;
     $("#gallery-container").css("left", "0%");
 
     //The Transitions start depending on the page user was on
@@ -424,15 +424,19 @@ $(document).ready(function () {
 
   //When the cursor is on Image, Shows the black screen and changes cursor to pointer when over icon
   //Its not working, cross-origin error probably because not working on server
+  let offset;
+  let y;
+  let z;
+  let img_data;
   $(".canvas-search").mousemove(function (e) {
     $(this).css('opacity', '1');
-    let offset = $(this).offset();
+    offset = $(this).offset();
     y = e.pageX - offset.left;
     z = e.pageY - offset.top;
     $(this).parent().children(".fade-img").css('opacity', '1');
-    if (checked == 1) {
-      var imgd = ctx1.getImageData(y, z, 1, 1).data;
-      if (imgd[3] != 0) {
+    if (canvas_loaded == 1) {
+      img_data = ctx1.getImageData(y, z, 1, 1).data;
+      if (img_data[3] != 0) {
         $(this).css('cursor', 'pointer');
       } else {
         $(this).css('cursor', 'auto');
@@ -455,48 +459,48 @@ $(document).ready(function () {
       $("#icon7").css('z-index', 100);
 
       $("#gallery-pictures").css('opacity', '0');
-      document.getElementById('close-arrow').src = "assets/images/close.png";
+      $('#close-arrow').attr("src", "assets/images/close.png");
 
-      if ($(this).attr('id') == "canvas-6") {
-        document.getElementById('zoom-image').src = galleryarray2[5];
-        gallerycheck = 6;
-        document.getElementById('thumbnail-img-1').src = galleryarray1[5];
-        document.getElementById('thumbnail-img-2').src = galleryarray1[4];
-      }
-
-      if ($(this).attr('id') == "canvas-3") {
-        document.getElementById('zoom-image').src = galleryarray2[2];
-        gallerycheck = 3;
-        document.getElementById('thumbnail-img-1').src = galleryarray1[3];
-        document.getElementById('thumbnail-img-2').src = galleryarray1[1];
+      if ($(this).attr('id') == "canvas-1") {
+        $('#zoom-image').attr("src", galleryarray2[0]);
+        $('#thumbnail-img-1').attr("src", galleryarray1[1]);
+        $('#thumbnail-img-2').attr("src", galleryarray1[0]);
+        picture_position = 1;
       }
 
       if ($(this).attr('id') == "canvas-2") {
-        document.getElementById('zoom-image').src = galleryarray2[1];
-        gallerycheck = 2;
-        document.getElementById('thumbnail-img-1').src = galleryarray1[2];
-        document.getElementById('thumbnail-img-2').src = galleryarray1[0];
+        $('#zoom-image').attr("src", galleryarray2[1]);
+        picture_position = 2;
+        $('#thumbnail-img-1').attr("src", galleryarray1[2]);
+        $('#thumbnail-img-2').attr("src", galleryarray1[0]);
       }
 
-      if ($(this).attr('id') == "canvas-1") {
-        document.getElementById('zoom-image').src = galleryarray2[0];
-        document.getElementById('thumbnail-img-1').src = galleryarray1[1];
-        document.getElementById('thumbnail-img-2').src = galleryarray1[0];
-        gallerycheck = 1;
+      if ($(this).attr('id') == "canvas-3") {
+        $('#zoom-image').attr("src", galleryarray2[2]);
+        picture_position = 3;
+        $('#thumbnail-img-1').attr("src", galleryarray1[3]);
+        $('#thumbnail-img-2').attr("src", galleryarray1[1]);
       }
 
       if ($(this).attr('id') == "canvas-4") {
-        document.getElementById('zoom-image').src = galleryarray2[3];
-        gallerycheck = 4;
-        document.getElementById('thumbnail-img-1').src = galleryarray1[4];
-        document.getElementById('thumbnail-img-2').src = galleryarray1[2];
+        $('#zoom-image').attr("src", galleryarray2[3]);
+        picture_position = 4;
+        $('#thumbnail-img-1').attr("src", galleryarray1[4]);
+        $('#thumbnail-img-2').attr("src", galleryarray1[2]);
       }
 
       if ($(this).attr('id') == "canvas-5") {
-        document.getElementById('zoom-image').src = galleryarray2[4];
-        gallerycheck = 5;
-        document.getElementById('thumbnail-img-1').src = galleryarray1[5];
-        document.getElementById('thumbnail-img-2').src = galleryarray1[3];
+        $('#zoom-image').attr("src", galleryarray2[4]);
+        picture_position = 5;
+        $('#thumbnail-img-1').attr("src", galleryarray1[5]);
+        $('#thumbnail-img-2').attr("src", galleryarray1[3]);
+      }
+
+      if ($(this).attr('id') == "canvas-6") {
+        $('#zoom-image').attr("src", galleryarray2[5]);
+        picture_position = 6;
+        $('#thumbnail-img-1').attr("src", galleryarray1[5]);
+        $('#thumbnail-img-2').attr("src", galleryarray1[4]);
       }
 
       $("#zoom-wrapper").css("display", "initial");
@@ -506,17 +510,17 @@ $(document).ready(function () {
   // Closes zoom-wrapper Picture
   $("#close-arrow").click(function (e) {
     $("#zoom-wrapper").css("display", "none");
-    document.getElementById('zoom-image').src = "";
+    $('#zoom-image').attr("src", "");
     $("#black-screen").css('display', 'none');
     $("#gallery-pictures").css('opacity', '1.0');
-    if (gallerycheck2 == 1) {
-      document.getElementById('thumbnail-img-1').src = "assets/images/thumb7.png";
-      document.getElementById('thumbnail-img-2').src = "assets/images/thumb1.png";
+    if (gallery_slide == 1) {
+      $('#thumbnail-img-1').attr("src", "assets/images/thumb7.png");
+      $('#thumbnail-img-2').attr("src", "assets/images/thumb1.png");
 
     }
-    if (gallerycheck2 == 2) {
-      document.getElementById('thumbnail-img-1').src = "assets/images/thumb7.png";
-      document.getElementById('thumbnail-img-2').src = "assets/images/thumb1.png";
+    if (gallery_slide == 2) {
+      $('#thumbnail-img-1').attr("src", "assets/images/thumb7.png");
+      $('#thumbnail-img-2').attr("src", "assets/images/thumb1.png");
     }
   });
 
@@ -1050,27 +1054,27 @@ $(document).ready(function () {
     function () {
       if ($("#zoom-wrapper").css('display') == "block") {
 
-        if (gallerycheck == 6) {} else {
+        if (picture_position == 6) {} else {
 
-          document.getElementById('zoom-image').src = "";
-          document.getElementById('zoom-image').src = galleryarray2[gallerycheck];
-          if (gallerycheck == 5) {} else {
-            document.getElementById('thumbnail-img-1').src = galleryarray1[gallerycheck + 1];
+          $('#zoom-image').attr("src", "");
+          $('#zoom-image').attr("src", galleryarray2[picture_position]);
+          if (picture_position == 5) {} else {
+            $('#thumbnail-img-1').attr("src", galleryarray1[picture_position + 1]);
           }
-          document.getElementById('thumbnail-img-2').src = galleryarray1[gallerycheck - 1];
-          gallerycheck++;
+          $('#thumbnail-img-2').attr("src", galleryarray1[picture_position - 1]);
+          picture_position++;
 
         }
       } else {
-        if (gallerycheck2 == 1) {
+        if (gallery_slide == 1) {
 
           $("#gallery-pictures").css("visibility", "hidden");
-          document.getElementById('image-1').src = "assets/images/picture7.png";
-          document.getElementById('image-2').src = "assets/images/picture8.png";
-          document.getElementById('image-3').src = "assets/images/picture9.png";
-          document.getElementById('image-4').src = "assets/images/picture10.png";
-          document.getElementById('image-5').src = "assets/images/picture11.png";
-          document.getElementById('image-6').src = "assets/images/picture12.png";
+          $('#image-1').attr("src", "assets/images/picture7.png");
+          $('#image-2').attr("src", "assets/images/picture8.png");
+          $('#image-3').attr("src", "assets/images/picture9.png");
+          $('#image-4').attr("src", "assets/images/picture10.png");
+          $('#image-5').attr("src", "assets/images/picture11.png");
+          $('#image-6').attr("src", "assets/images/picture12.png");
 
           galleryarray1 = new Array("assets/images/thumb7.png", "assets/images/thumb8.png",
             "assets/images/thumb9.png", "assets/images/thumb10.png", "assets/images/thumb11.png",
@@ -1081,19 +1085,18 @@ $(document).ready(function () {
             "assets/images/bigpic12.png"
           );
 
-          var interval14 = setInterval(function () {
+          setTimeout(function () {
             $("#gallery-pictures").css("visibility", "visible");
-            clearInterval(interval14);
           }, 200);
 
-          gallerycheck2++;
-          if (gallerycheck2 == 1) {
-            document.getElementById('thumbnail-img-1').src = "assets/images/thumb7.png";
-            document.getElementById('thumbnail-img-2').src = "assets/images/thumb1.png";
+          gallery_slide++;
+          if (gallery_slide == 1) {
+            $('#thumbnail-img-1').attr("src", "assets/images/thumb7.png");
+            $('#thumbnail-img-2').attr("src", "assets/images/thumb1.png");
           }
-          if (gallerycheck2 == 2) {
-            document.getElementById('thumbnail-img-1').src = "assets/images/thumb7.png";
-            document.getElementById('thumbnail-img-2').src = "assets/images/thumb1.png";
+          if (gallery_slide == 2) {
+            $('#thumbnail-img-1').attr("src", "assets/images/thumb7.png");
+            $('#thumbnail-img-2').attr("src", "assets/images/thumb1.png");
           }
         }
       }
@@ -1103,24 +1106,24 @@ $(document).ready(function () {
     function () {
 
       if ($("#zoom-wrapper").css('display') == "block") {
-        if (gallerycheck == 1) {} else {
-          document.getElementById('zoom-image').src = "";
-          document.getElementById('zoom-image').src = galleryarray2[gallerycheck - 2];
-          document.getElementById('thumbnail-img-1').src = galleryarray1[gallerycheck - 1];
-          if (gallerycheck == 2) {} else {
-            document.getElementById('thumbnail-img-2').src = galleryarray1[gallerycheck - 3];
+        if (picture_position == 1) {} else {
+          $('#zoom-image').attr("src", "");
+          $('#zoom-image').attr("src", galleryarray2[picture_position - 2]);
+          $('#thumbnail-img-1').attr("src", galleryarray1[picture_position - 1]);
+          if (picture_position == 2) {} else {
+            $('#thumbnail-img-2').attr("src", galleryarray1[picture_position - 3]);
           }
-          gallerycheck--;
+          picture_position--;
         }
       } else {
-        if (gallerycheck2 == 2) {
+        if (gallery_slide == 2) {
           $("#gallery-pictures").css("visibility", "hidden");
-          document.getElementById('image-1').src = "assets/images/picture1.png";
-          document.getElementById('image-2').src = "assets/images/picture2.png";
-          document.getElementById('image-3').src = "assets/images/picture3.png";
-          document.getElementById('image-4').src = "assets/images/picture4.png";
-          document.getElementById('image-5').src = "assets/images/picture5.png";
-          document.getElementById('image-6').src = "assets/images/picture6.png";
+          $('#image-1').attr("src", "assets/images/picture1.png");
+          $('#image-2').attr("src", "assets/images/picture2.png");
+          $('#image-3').attr("src", "assets/images/picture3.png");
+          $('#image-4').attr("src", "assets/images/picture4.png");
+          $('#image-5').attr("src", "assets/images/picture5.png");
+          $('#image-6').attr("src", "assets/images/picture6.png");
 
           galleryarray1 = new Array("assets/images/thumb1.png", "assets/images/thumb2.png",
             "assets/images/thumb3.png", "assets/images/thumb4.png", "assets/images/thumb5.png",
@@ -1131,19 +1134,18 @@ $(document).ready(function () {
             "assets/images/bigpic6.png"
           );
 
-          var interval24 = setInterval(function () {
+          setTimeout(function () {
             $("#gallery-pictures").css("visibility", "visible");
-            clearInterval(interval24);
           }, 200);
 
-          gallerycheck2--;
-          if (gallerycheck2 == 1) {
-            document.getElementById('thumbnail-img-1').src = "assets/images/thumb7.png";
-            document.getElementById('thumbnail-img-2').src = "assets/images/thumb1.png";
+          gallery_slide--;
+          if (gallery_slide == 1) {
+            $('#thumbnail-img-1').attr("src", "assets/images/thumb7.png");
+            $('#thumbnail-img-2').attr("src", "assets/images/thumb1.png");
           }
-          if (gallerycheck2 == 2) {
-            document.getElementById('thumbnail-img-1').src = "assets/images/thumb7.png";
-            document.getElementById('thumbnail-img-2').src = "assets/images/thumb1.png";
+          if (gallery_slide == 2) {
+            $('#thumbnail-img-1').attr("src", "assets/images/thumb7.png");
+            $('#thumbnail-img-2').attr("src", "assets/images/thumb1.png");
           }
         }
       }
