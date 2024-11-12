@@ -136,15 +136,15 @@ $(document).ready(function () {
     }
 
     // If About is Pressed when the Current Page is Any Page Other Than Homepage or the About Page
-    if ($("#rsvp").css('display') == "block" || $("#ri").css('display') == "block" || $("#contact1").css('display') == "block" ||
+    if ($("#rsvp").css('display') == "block" || $("#rsvp-page").css('display') == "block" || $("#contact1").css('display') == "block" ||
       $("#gallery-container").css('display') == "block") {
 
       $("#container-multiple").css("pointer-events", "visible"); // The Container of All Pages apart Homepage becomes interactable
 
       // Animates the Current Page out of View
 
-      if ($("#ri").css('display') == "block") {
-        $("#ri").animate({
+      if ($("#rsvp-page").css('display') == "block") {
+        $("#rsvp-page").animate({
           left: '100%'
         }, 500, "linear");
       }
@@ -168,7 +168,7 @@ $(document).ready(function () {
       }
 
       // Repetitive, but sets up About 1 to be animated from top
-      if ($("#rsvp").css('display') == "block" || $("#ri").css('display') == "block" || $("#contact1").css('display') == "block" ||
+      if ($("#rsvp").css('display') == "block" || $("#rsvp-page").css('display') == "block" || $("#contact1").css('display') == "block" ||
         $("#gallery-container").css('display') == "block") {
         $("#about-page-1").css("top", "-100%");
         $("#about-page-1").css("left", "0%");
@@ -193,8 +193,8 @@ $(document).ready(function () {
           $("#rsvp").css('display', 'none');
         }
 
-        if ($("#ri").css('display') == "block") {
-          $("#ri").css('display', 'none');
+        if ($("#rsvp-page").css('display') == "block") {
+          $("#rsvp-page").css('display', 'none');
 
         }
 
@@ -353,9 +353,9 @@ $(document).ready(function () {
 
     //The Transitions start depending on the page user was on
 
-    if ($("#ri").css('display') == "block") {
+    if ($("#rsvp-page").css('display') == "block") {
       $("#gallery-container").css("left", "-100%");
-      $("#ri").animate({
+      $("#rsvp-page").animate({
         left: '100%'
       }, 500, "linear");
     }
@@ -394,8 +394,8 @@ $(document).ready(function () {
       if ($("#about-pages-container").css('display') == "block") {
         $("#about-pages-container").css('display', 'none');
       }
-      if ($("#ri").css('display') == "block") {
-        $("#ri").css('display', 'none');
+      if ($("#rsvp-page").css('display') == "block") {
+        $("#rsvp-page").css('display', 'none');
       }
       if ($("#contact1").css('display') == "block") {
         $("#contact1").css('display', 'none');
@@ -528,7 +528,7 @@ $(document).ready(function () {
   $("#menu-item-4").click(function () {
 
     //Coming from any page other than Homepage
-    if ($("#about-pages-container").css('display') == "block" || $("#ri").css('display') == "block" || $("#contact1").css('display') == "block" ||
+    if ($("#about-pages-container").css('display') == "block" || $("#rsvp-page").css('display') == "block" || $("#contact1").css('display') == "block" ||
       $("#gallery-container").css('display') == "block") {
 
       $("#container-multiple").css("pointer-events", "visible"); //Make the Parent Container Interactive
@@ -554,8 +554,8 @@ $(document).ready(function () {
       }
 
       //If coming from RSVP Page (RI is RSVP!), trigger the page's animation
-      if ($("#ri").css('display') == "block") {
-        $("#ri").animate({
+      if ($("#rsvp-page").css('display') == "block") {
+        $("#rsvp-page").animate({
           left: '100%'
         }, 500, "linear");
       }
@@ -573,7 +573,7 @@ $(document).ready(function () {
       }
 
       //Setup Request Invitation Page, if coming from Contact or RSVP Page
-      if ($("#contact1").css('display') == "block" || $("#ri").css('display') == "block") {
+      if ($("#contact1").css('display') == "block" || $("#rsvp-page").css('display') == "block") {
         $("#rsvp").css("left", "-100%");
       }
 
@@ -593,8 +593,8 @@ $(document).ready(function () {
         if ($("#about-pages-container").css('display') == "block") {
           $("#about-pages-container").css('display', 'none');
         }
-        if ($("#ri").css('display') == "block") {
-          $("#ri").css('display', 'none');
+        if ($("#rsvp-page").css('display') == "block") {
+          $("#rsvp-page").css('display', 'none');
 
         }
         if ($("#contact1").css('display') == "block") {
@@ -658,15 +658,15 @@ $(document).ready(function () {
       }
 
       if ($("#about-pages-container").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#gallery-container").css('display') == "block") {
-        $("#ri").css("left", "100%");
+        $("#rsvp-page").css("left", "100%");
       }
 
       if ($("#contact1").css('display') == "block") {
-        $("#ri").css("left", "-100%");
+        $("#rsvp-page").css("left", "-100%");
       }
 
-      $("#ri").css('display', 'initial');
-      $("#ri").animate({
+      $("#rsvp-page").css('display', 'initial');
+      $("#rsvp-page").animate({
         left: '0%'
       }, 500, "linear");
 
@@ -692,9 +692,9 @@ $(document).ready(function () {
         clearInterval(interval102);
       }, 500);
     } else {
-      $("#ri").css("left", "0%");
+      $("#rsvp-page").css("left", "0%");
       $("#black-screen").css('display', 'initial');
-      $("#ri").css('display', 'initial');
+      $("#rsvp-page").css('display', 'initial');
       $("#scene").parallax('disable');
       $(".header-menu").css('z-index', 100);
       $("#icon7").css('z-index', 100);
@@ -706,7 +706,7 @@ $(document).ready(function () {
   //When Contact is selected in Header, code is similar to RI and RSVP Selection
   $("#menu-item-6").click(function () {
 
-    if ($("#about-pages-container").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#ri").css('display') == "block" ||
+    if ($("#about-pages-container").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#rsvp-page").css('display') == "block" ||
       $("#gallery-container").css('display') == "block") {
       $("#container-multiple").css("pointer-events", "visible");
 
@@ -734,8 +734,8 @@ $(document).ready(function () {
         }, 500, "linear");
       }
 
-      if ($("#ri").css('display') == "block") {
-        $("#ri").animate({
+      if ($("#rsvp-page").css('display') == "block") {
+        $("#rsvp-page").animate({
           left: '-100%'
         }, 500, "linear");
       }
@@ -758,8 +758,8 @@ $(document).ready(function () {
         if ($("#rsvp").css('display') == "block") {
           $("#rsvp").css('display', 'none');
         }
-        if ($("#ri").css('display') == "block") {
-          $("#ri").css('display', 'none');
+        if ($("#rsvp-page").css('display') == "block") {
+          $("#rsvp-page").css('display', 'none');
         }
         if ($("#gallery-container").css('display') == "block") {
           $("#gallery-container").css('display', 'none');
@@ -809,8 +809,8 @@ $(document).ready(function () {
       }, 500, "linear");
     }
 
-    if ($("#ri").css('display') == "block") {
-      $("#ri").animate({
+    if ($("#rsvp-page").css('display') == "block") {
+      $("#rsvp-page").animate({
         left: '100%'
       }, 500, "linear");
     }
@@ -837,8 +837,8 @@ $(document).ready(function () {
       if ($("#rsvp").css('display') == "block") {
         $("#rsvp").css('display', 'none');
       }
-      if ($("#ri").css('display') == "block") {
-        $("#ri").css('display', 'none');
+      if ($("#rsvp-page").css('display') == "block") {
+        $("#rsvp-page").css('display', 'none');
       }
       if ($("#gallery-container").css('display') == "block") {
         $("#gallery-container").css('display', 'none');

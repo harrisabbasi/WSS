@@ -151,30 +151,30 @@
     </div>
 
     <!-- The RSVP Page -->
-    <div id="ri">
+    <div id="rsvp-page">
       <!-- Main Form Container-->
-      <div id="formcontainer">
+      <div id="forms-container">
         <!-- Error Pop Ups, not implemented -->
         <img id="balloon" class="magic" src="assets/images/balloon.png" style="top:140px;visibility:hidden;">
         <img id="balloon" class="magician" src="assets/images/balloon.png"
           style="top:140px;left:25px;visibility:hidden;">
 
-        <div id="form1">
-          <span id="form1head">RSVP</span>
+        <div id="forms-inner-container">
+          <span id="forms-title">RSVP</span>
 
-          <p align="justify" id="head">Instructions and directions to screening sent upon successful RSVP.
+          <p align="justify" id="form-instructions">Instructions and directions to screening sent upon successful RSVP.
             Invitations are non-transferrable.
             If you did not receive an invitation you may request one on the REQUEST INVITATION page. </p>
 
-          <form name="input2" id="input2" style="height:100px">
-            <div id="formback2" style="top:0%;">
-              <div id="inner2" style="width:35%"><span id="innertext2">Confirmation Number</span></div>
-              <input id="select2" type="text" name="bname1">
+          <form id="forms-id" style="height:100px">
+            <div id="field-container" style="top:0%;">
+              <div id="field-inner-container" style="width:35%"><span id="span-text">Confirmation Number</span></div>
+              <input id="input-field" type="text">
             </div>
 
             <div id="formback3" style="top:0%;">
-              <div id="inner2"><span id="innertext">Last Name</span></div>
-              <input id="select2" type="text" name="bname2">
+              <div id="field-inner-container"><span id="innertext">Last Name</span></div>
+              <input id="input-field" type="text">
             </div>
 
             <input type="submit" value="SUBMIT" id="button" style="top:60px;">
@@ -186,16 +186,16 @@
     <!-- Contact Page -->
     <div id="contact1">
       <!-- Main Form Container -->
-      <div id="formcontainer">
+      <div id="forms-container">
         <!-- Error Pop Up -->
         <img id="balloon" src="assets/images/balloon.png" style="top:260px;">
 
-        <div id="form1">
-          <span id="form1head">CONTACT</span>
-          <p align="justify" id="head">For all media and press concerns please use the form below.
+        <div id="forms-inner-container">
+          <span id="forms-title">CONTACT</span>
+          <p align="justify" id="form-instructions">For all media and press concerns please use the form below.
             All fields required except for Company and Title.</p>
 
-          <form name="input3" id="input2" style="top:140px;">
+          <form name="input3" id="forms-id" style="top:140px;">
             <img id="selectimg" src="assets/images/dropdown.png">
             <div id="formback">
               <div id="inner"><span id="innertext">Type</span></div>
@@ -206,43 +206,43 @@
               </select>
             </div>
 
-            <div id="formback2" style="top:60px;">
-              <div id="inner2"><span id="innertext">First Name</span></div>
-              <input id="select2" type="text" name="cname1">
+            <div id="field-container" style="top:60px;">
+              <div id="field-inner-container"><span id="innertext">First Name</span></div>
+              <input id="input-field" type="text" name="cname1">
             </div>
 
             <div id="formback3" style="top:60px;">
-              <div id="inner2"><span id="innertext">Last Name</span></div>
-              <input id="select2" type="text" name="cname2">
+              <div id="field-inner-container"><span id="innertext">Last Name</span></div>
+              <input id="input-field" type="text" name="cname2">
             </div>
 
             <div id="formback4" style="top:120px;">
-              <div id="inner2"><span id="innertext">Company</span></div>
-              <input id="select2" type="text" name="cname3">
+              <div id="field-inner-container"><span id="innertext">Company</span></div>
+              <input id="input-field" type="text" name="cname3">
             </div>
 
             <div id="formback5" style="top:120px;">
-              <div id="inner2"><span id="innertext">Title</span></div>
-              <input id="select2" type="text" name="cname4">
+              <div id="field-inner-container"><span id="innertext">Title</span></div>
+              <input id="input-field" type="text" name="cname4">
             </div>
 
             <div id="formback6" style="top:180px;">
-              <div id="inner2"><span id="innertext">Phone number</span></div>
-              <input id="select2" type="text" name="cname5">
+              <div id="field-inner-container"><span id="innertext">Phone number</span></div>
+              <input id="input-field" type="text" name="cname5">
             </div>
 
             <div id="formback7" style="top:180px;">
-              <div id="inner2"><span id="innertext">Email address</span></div>
-              <input id="select2" type="text" name="cname6">
+              <div id="field-inner-container"><span id="innertext">Email address</span></div>
+              <input id="input-field" type="text" name="cname6">
             </div>
 
             <div id="formback10" style="top:240px;">
-              <div id="inner2"><span id="innertext">Subject</span></div>
-              <input id="select2" type="text" name="cname7">
+              <div id="field-inner-container"><span id="innertext">Subject</span></div>
+              <input id="input-field" type="text" name="cname7">
             </div>
 
             <div id="formback11" style="top:300px;">
-              <div id="inner3"><span id="innertext2">Additional Information</span></div>
+              <div id="inner3"><span id="span-text">Additional Information</span></div>
               <textarea name="special"
                 id="textarea">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</textarea>
             </div>
@@ -255,12 +255,13 @@
 
     <div id="rsvp">
       Main Form Container
-      <div id="formcontainer">
+      <div id="forms-container">
         <img id="balloon" src="assets/images/balloon.png">
 
-        <div id="form1">
-          <span id="form1head">REQUEST INVITATION</span>
-          <p align="justify" id="head">If you would like to be considered for our special screening event please fill
+        <div id="forms-inner-container">
+          <span id="forms-title">REQUEST INVITATION</span>
+          <p align="justify" id="form-instructions">If you would like to be considered for our special screening event
+            please fill
             out all
             required fields below and then click
             the SUBMIT button. Please only submit one request per person.
@@ -270,7 +271,7 @@
             drop-down menu.
             You may submit multiple requests, one for each person, for more than one request. </p>
 
-          <form name="input1" id="input2" style="top:165px;">
+          <form name="input1" id="forms-id" style="top:165px;">
             <img id="selectimg" src="assets/images/dropdown.png">
             <img id="selectimg2" src="assets/images/dropdown.png">
             <div id="formback">
@@ -282,34 +283,34 @@
               </select>
             </div>
 
-            <div id="formback2" style="top:60px">
-              <div id="inner2"><span id="innertext">First Name</span></div>
-              <input id="select2" type="text" name="name1">
+            <div id="field-container" style="top:60px">
+              <div id="field-inner-container"><span id="innertext">First Name</span></div>
+              <input id="input-field" type="text" name="name1">
             </div>
 
             <div id="formback3" style="top:60px">
-              <div id="inner2"><span id="innertext">Last Name</span></div>
-              <input id="select2" type="text" name="name2">
+              <div id="field-inner-container"><span id="innertext">Last Name</span></div>
+              <input id="input-field" type="text" name="name2">
             </div>
 
             <div id="formback4" style="top:120px">
-              <div id="inner2"><span id="innertext">Company</span></div>
-              <input id="select2" type="text" name="name3">
+              <div id="field-inner-container"><span id="innertext">Company</span></div>
+              <input id="input-field" type="text" name="name3">
             </div>
 
             <div id="formback5" style="top:120px">
-              <div id="inner2"><span id="innertext">Title at Company</span></div>
-              <input id="select2" type="text" name="name4">
+              <div id="field-inner-container"><span id="innertext">Title at Company</span></div>
+              <input id="input-field" type="text" name="name4">
             </div>
 
             <div id="formback6" style="top:180px">
-              <div id="inner2"><span id="innertext">Phone number</span></div>
-              <input id="select2" type="text" name="name5">
+              <div id="field-inner-container"><span id="innertext">Phone number</span></div>
+              <input id="input-field" type="text" name="name5">
             </div>
 
             <div id="formback7" style="top:180px">
-              <div id="inner2"><span id="innertext2">Number of Guests Requested</span></div>
-              <select id="select2">
+              <div id="field-inner-container"><span id="span-text">Number of Guests Requested</span></div>
+              <select id="input-field">
                 <option value="five">5</option>
                 <option value="ten">10</option>
                 <option value="fifteen">15</option>
@@ -317,7 +318,7 @@
             </div>
 
             <div id="formback8" style="top:240px">
-              <div id="inner3"><span id="innertext2">Additional Information</span></div>
+              <div id="inner3"><span id="span-text">Additional Information</span></div>
               <textarea name="special" id="textarea">
               If you like, please provide us with any information that may 
               assist us in fulfilling your request. You may leave this field blank.
@@ -325,8 +326,8 @@
             </div>
 
             <div id="formback9" style="top:380px">
-              <div id="inner" style="width:15%"><span id="innertext2">Special Instructions</span></div>
-              <input id="select2" type="text" name="name4" style="width:79%;">
+              <div id="inner" style="width:15%"><span id="span-text">Special Instructions</span></div>
+              <input id="input-field" type="text" name="name4" style="width:79%;">
             </div>
 
             <input type="submit" value="SUBMIT" id="button" style="top:440px">

@@ -147,11 +147,11 @@ body {
     pointer-events: none;
 }
 
-#ri {
+#rsvp-page {
     position: absolute;
     height: 100%;
     width: 100%;
-
+    font-family: "Lato", sans-serif;
     overflow: hidden;
     margin: auto;
     top: 0;
@@ -160,11 +160,21 @@ body {
     left: 0;
     max-width: 1920px;
     max-height: 800px;
-
     padding: 0px;
     z-index: 2;
     display: none;
     pointer-events: none;
+}
+
+#innertext,
+#span-text,
+#forms-id,
+#form-instructions,
+#button,
+#input-field,
+#textarea,
+#forms-title {
+    font-family: "Lato", sans-serif;
 }
 
 #contact1 {
@@ -196,7 +206,7 @@ body {
     src: url("Lato-Reg.ttf") format("truetype");
 } */
 
-#formcontainer {
+#forms-container {
     width: 1025px;
     height: 81%;
 
@@ -214,7 +224,7 @@ body {
     overflow-x: hidden;
 }
 
-#form1 {
+#forms-inner-container {
     width: 625px;
     height: 100%;
 
@@ -258,21 +268,21 @@ body {
     pointer-events: none;
 }
 
-#form1head {
-    font-family: font2;
+#forms-title {
+    /* font-family: font2; */
     font-size: 20px;
     color: #ffffff;
 }
 
-#head {
+#form-instructions {
     position: absolute;
     top: 50px;
-    font-family: font3;
+    /* font-family: font3; */
     font-size: 14px;
     color: #ffffff;
 }
 
-#input2 {
+#forms-id {
     position: absolute;
     top: 140px;
     width: 100%;
@@ -314,7 +324,7 @@ body {
 
 #innertext {
     position: absolute;
-    font-family: font2;
+    /* font-family: font2; */
     font-size: 13px;
     color: black;
     top: 50%;
@@ -323,10 +333,10 @@ body {
     transform: translateY(-50%);
 }
 
-#innertext2 {
+#span-text {
     line-height: 14px;
     position: absolute;
-    font-family: font2;
+    /* font-family: font2; */
     font-size: 13px;
     color: black;
     top: 50%;
@@ -357,13 +367,12 @@ body {
     font-size: 0;
 }
 
-#formback2 {
+#field-container {
     position: absolute;
     width: 48.4%;
     height: 40px;
     background-image: url("../images/inputback.png");
     background-size: 100% 100%;
-
     font-size: 0;
 }
 
@@ -373,7 +382,6 @@ body {
     height: 40px;
     background-image: url("../images/inputback.png");
     background-size: 100% 100%;
-
     left: 51.6%;
     font-size: 0;
 }
@@ -481,7 +489,7 @@ body {
     font-size: 0;
 }
 
-#inner2 {
+#field-inner-container {
     margin: 0;
     padding: 0;
     position: relative;
@@ -495,7 +503,7 @@ body {
     float: left;
 }
 
-#select2 {
+#input-field {
     position: relative;
     float: left;
     font-family: font3;
@@ -515,7 +523,7 @@ body {
     left: 84%;
     width: 16%;
     height: 40px;
-    font-family: font2;
+    /* font-family: font2; */
     background-color: #2eabb9;
     border: none;
     font-size: 13px;
@@ -1707,15 +1715,15 @@ body {
         font-size: 11px;
     }
 
-    #form1head {
+    #forms-title {
         font-size: 18px;
     }
 
-    #head {
+    #form-instructions {
         font-size: 14px;
     }
 
-    #input2 {
+    #forms-id {
         font-size: 13px;
     }
 
@@ -1724,7 +1732,7 @@ body {
         line-height: 15px;
     }
 
-    #innertext2 {
+    #span-text {
         font-size: 13px;
         line-height: 15px;
     }
