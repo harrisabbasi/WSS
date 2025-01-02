@@ -136,7 +136,7 @@ $(document).ready(function () {
     }
 
     // If About is Pressed when the Current Page is Any Page Other Than Homepage or the About Page
-    if ($("#rsvp").css('display') == "block" || $("#rsvp-page").css('display') == "block" || $("#contact1").css('display') == "block" ||
+    if ($("#ri-page").css('display') == "block" || $("#rsvp-page").css('display') == "block" || $("#contact-page").css('display') == "block" ||
       $("#gallery-container").css('display') == "block") {
 
       $("#container-multiple").css("pointer-events", "visible"); // The Container of All Pages apart Homepage becomes interactable
@@ -155,20 +155,20 @@ $(document).ready(function () {
         }, 500, "linear");
       }
 
-      if ($("#rsvp").css('display') == "block") {
-        $("#rsvp").animate({
+      if ($("#ri-page").css('display') == "block") {
+        $("#ri-page").animate({
           left: '100%'
         }, 500, "linear");
       }
 
-      if ($("#contact1").css('display') == "block") {
-        $("#contact1").animate({
+      if ($("#contact-page").css('display') == "block") {
+        $("#contact-page").animate({
           left: '100%'
         }, 500, "linear");
       }
 
       // Repetitive, but sets up About 1 to be animated from top
-      if ($("#rsvp").css('display') == "block" || $("#rsvp-page").css('display') == "block" || $("#contact1").css('display') == "block" ||
+      if ($("#ri-page").css('display') == "block" || $("#rsvp-page").css('display') == "block" || $("#contact-page").css('display') == "block" ||
         $("#gallery-container").css('display') == "block") {
         $("#about-page-1").css("top", "-100%");
         $("#about-page-1").css("left", "0%");
@@ -189,8 +189,8 @@ $(document).ready(function () {
         $("#container-multiple").css("pointer-events", "none"); //The Home Page Becomes Unclickable or Interactable
 
         // Since the Previous Page has Safely Animated off Screen, Set its display to none
-        if ($("#rsvp").css('display') == "block") {
-          $("#rsvp").css('display', 'none');
+        if ($("#ri-page").css('display') == "block") {
+          $("#ri-page").css('display', 'none');
         }
 
         if ($("#rsvp-page").css('display') == "block") {
@@ -198,8 +198,8 @@ $(document).ready(function () {
 
         }
 
-        if ($("#contact1").css('display') == "block") {
-          $("#contact1").css('display', 'none');
+        if ($("#contact-page").css('display') == "block") {
+          $("#contact-page").css('display', 'none');
 
         }
 
@@ -360,16 +360,16 @@ $(document).ready(function () {
       }, 500, "linear");
     }
 
-    if ($("#contact1").css('display') == "block") {
+    if ($("#contact-page").css('display') == "block") {
       $("#gallery-container").css("left", "-100%");
-      $("#contact1").animate({
+      $("#contact-page").animate({
         left: '100%'
       }, 500, "linear");
     }
 
-    if ($("#rsvp").css('display') == "block") {
+    if ($("#ri-page").css('display') == "block") {
       $("#gallery-container").css("left", "-100%");
-      $("#rsvp").animate({
+      $("#ri-page").animate({
         left: '100%'
       }, 500, "linear");
     }
@@ -397,11 +397,11 @@ $(document).ready(function () {
       if ($("#rsvp-page").css('display') == "block") {
         $("#rsvp-page").css('display', 'none');
       }
-      if ($("#contact1").css('display') == "block") {
-        $("#contact1").css('display', 'none');
+      if ($("#contact-page").css('display') == "block") {
+        $("#contact-page").css('display', 'none');
       }
-      if ($("#rsvp").css('display') == "block") {
-        $("#contact1").css('display', 'none');
+      if ($("#ri-page").css('display') == "block") {
+        $("#contact-page").css('display', 'none');
       }
     }, 500);
 
@@ -528,7 +528,7 @@ $(document).ready(function () {
   $("#menu-item-4").click(function () {
 
     //Coming from any page other than Homepage
-    if ($("#about-pages-container").css('display') == "block" || $("#rsvp-page").css('display') == "block" || $("#contact1").css('display') == "block" ||
+    if ($("#about-pages-container").css('display') == "block" || $("#rsvp-page").css('display') == "block" || $("#contact-page").css('display') == "block" ||
       $("#gallery-container").css('display') == "block") {
 
       $("#container-multiple").css("pointer-events", "visible"); //Make the Parent Container Interactive
@@ -561,25 +561,25 @@ $(document).ready(function () {
       }
 
       //If coming from Contact Page, trigger the page's animation
-      if ($("#contact1").css('display') == "block") {
-        $("#contact1").animate({
+      if ($("#contact-page").css('display') == "block") {
+        $("#contact-page").animate({
           left: '100%'
         }, 500, "linear");
       }
 
       //Setup Request Invitation Page, if coming from About Pages or Gallery
       if ($("#about-pages-container").css('display') == "block" || $("#gallery-container").css('display') == "block") {
-        $("#rsvp").css("left", "100%");
+        $("#ri-page").css("left", "100%");
       }
 
       //Setup Request Invitation Page, if coming from Contact or RSVP Page
-      if ($("#contact1").css('display') == "block" || $("#rsvp-page").css('display') == "block") {
-        $("#rsvp").css("left", "-100%");
+      if ($("#contact-page").css('display') == "block" || $("#rsvp-page").css('display') == "block") {
+        $("#ri-page").css("left", "-100%");
       }
 
       //Request Animation Page Animation
-      $("#rsvp").css('display', 'initial');
-      $("#rsvp").animate({
+      $("#ri-page").css('display', 'initial');
+      $("#ri-page").animate({
         left: '0%'
       }, 500, "linear");
 
@@ -597,8 +597,8 @@ $(document).ready(function () {
           $("#rsvp-page").css('display', 'none');
 
         }
-        if ($("#contact1").css('display') == "block") {
-          $("#contact1").css('display', 'none');
+        if ($("#contact-page").css('display') == "block") {
+          $("#contact-page").css('display', 'none');
         }
         if ($("#gallery-container").css('display') == "block") {
           $("#gallery-container").css('display', 'none');
@@ -608,9 +608,9 @@ $(document).ready(function () {
       }, 500);
 
     } else {
-      $("#rsvp").css("left", "0%");
+      $("#ri-page").css("left", "0%");
       $("#black-screen").css('display', 'initial');
-      $("#rsvp").css('display', 'initial');
+      $("#ri-page").css('display', 'initial');
       $("#scene").parallax('disable');
       $(".header-menu").css('z-index', 100);
       $("#icon7").css('z-index', 100);
@@ -621,7 +621,7 @@ $(document).ready(function () {
 
   //When RSVP page is selected, the code is similar to when Request Invitation is pressed
   $("#menu-item-5").click(function () {
-    if ($("#about-pages-container").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#contact1").css('display') == "block" ||
+    if ($("#about-pages-container").css('display') == "block" || $("#ri-page").css('display') == "block" || $("#contact-page").css('display') == "block" ||
       $("#gallery-container").css('display') == "block") {
 
       $("#container-multiple").css("pointer-events", "visible");
@@ -639,8 +639,8 @@ $(document).ready(function () {
         }
       }
 
-      if ($("#rsvp").css('display') == "block") {
-        $("#rsvp").animate({
+      if ($("#ri-page").css('display') == "block") {
+        $("#ri-page").animate({
           left: '-100%'
         }, 500, "linear");
       }
@@ -651,17 +651,17 @@ $(document).ready(function () {
         }, 500, "linear");
       }
 
-      if ($("#contact1").css('display') == "block") {
-        $("#contact1").animate({
+      if ($("#contact-page").css('display') == "block") {
+        $("#contact-page").animate({
           left: '100%'
         }, 500, "linear");
       }
 
-      if ($("#about-pages-container").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#gallery-container").css('display') == "block") {
+      if ($("#about-pages-container").css('display') == "block" || $("#ri-page").css('display') == "block" || $("#gallery-container").css('display') == "block") {
         $("#rsvp-page").css("left", "100%");
       }
 
-      if ($("#contact1").css('display') == "block") {
+      if ($("#contact-page").css('display') == "block") {
         $("#rsvp-page").css("left", "-100%");
       }
 
@@ -679,12 +679,12 @@ $(document).ready(function () {
         if ($("#about-pages-container").css('display') == "block") {
           $("#about-pages-container").css('display', 'none');
         }
-        if ($("#rsvp").css('display') == "block") {
-          $("#rsvp").css('display', 'none');
+        if ($("#ri-page").css('display') == "block") {
+          $("#ri-page").css('display', 'none');
 
         }
-        if ($("#contact1").css('display') == "block") {
-          $("#contact1").css('display', 'none');
+        if ($("#contact-page").css('display') == "block") {
+          $("#contact-page").css('display', 'none');
         }
         if ($("#gallery-container").css('display') == "block") {
           $("#gallery-container").css('display', 'none');
@@ -706,7 +706,7 @@ $(document).ready(function () {
   //When Contact is selected in Header, code is similar to RI and RSVP Selection
   $("#menu-item-6").click(function () {
 
-    if ($("#about-pages-container").css('display') == "block" || $("#rsvp").css('display') == "block" || $("#rsvp-page").css('display') == "block" ||
+    if ($("#about-pages-container").css('display') == "block" || $("#ri-page").css('display') == "block" || $("#rsvp-page").css('display') == "block" ||
       $("#gallery-container").css('display') == "block") {
       $("#container-multiple").css("pointer-events", "visible");
 
@@ -722,8 +722,8 @@ $(document).ready(function () {
         }
       }
 
-      if ($("#rsvp").css('display') == "block") {
-        $("#rsvp").animate({
+      if ($("#ri-page").css('display') == "block") {
+        $("#ri-page").animate({
           left: '-100%'
         }, 500, "linear");
       }
@@ -740,10 +740,10 @@ $(document).ready(function () {
         }, 500, "linear");
       }
 
-      $("#contact1").css('display', 'initial');
-      $("#contact1").css("left", "100%");
+      $("#contact-page").css('display', 'initial');
+      $("#contact-page").css("left", "100%");
 
-      $("#contact1").animate({
+      $("#contact-page").animate({
         left: '0%'
       }, 500, "linear");
 
@@ -755,8 +755,8 @@ $(document).ready(function () {
         if ($("#about-pages-container").css('display') == "block") {
           $("#about-pages-container").css('display', 'none');
         }
-        if ($("#rsvp").css('display') == "block") {
-          $("#rsvp").css('display', 'none');
+        if ($("#ri-page").css('display') == "block") {
+          $("#ri-page").css('display', 'none');
         }
         if ($("#rsvp-page").css('display') == "block") {
           $("#rsvp-page").css('display', 'none');
@@ -769,9 +769,9 @@ $(document).ready(function () {
       }, 500);
     } else {
 
-      $("#contact1").css("left", "0%");
+      $("#contact-page").css("left", "0%");
       $("#black-screen").css('display', 'block');
-      $("#contact1").css('display', 'block');
+      $("#contact-page").css('display', 'block');
       $("#scene").parallax('disable');
       $(".header-menu").css('z-index', 100);
       $("#icon7").css('z-index', 100);
@@ -803,8 +803,8 @@ $(document).ready(function () {
       }
     }
 
-    if ($("#rsvp").css('display') == "block") {
-      $("#rsvp").animate({
+    if ($("#ri-page").css('display') == "block") {
+      $("#ri-page").animate({
         left: '100%'
       }, 500, "linear");
     }
@@ -816,8 +816,8 @@ $(document).ready(function () {
     }
 
 
-    if ($("#contact1").css('display') == "block") {
-      $("#contact1").animate({
+    if ($("#contact-page").css('display') == "block") {
+      $("#contact-page").animate({
         left: '100%'
       }, 500, "linear");
     }
@@ -834,8 +834,8 @@ $(document).ready(function () {
       if ($("#about-pages-container").css('display') == "block") {
         $("#about-pages-container").css('display', 'none');
       }
-      if ($("#rsvp").css('display') == "block") {
-        $("#rsvp").css('display', 'none');
+      if ($("#ri-page").css('display') == "block") {
+        $("#ri-page").css('display', 'none');
       }
       if ($("#rsvp-page").css('display') == "block") {
         $("#rsvp-page").css('display', 'none');
@@ -843,8 +843,8 @@ $(document).ready(function () {
       if ($("#gallery-container").css('display') == "block") {
         $("#gallery-container").css('display', 'none');
       }
-      if ($("#contact1").css('display') == "block") {
-        $("#contact1").css('display', 'none');
+      if ($("#contact-page").css('display') == "block") {
+        $("#contact-page").css('display', 'none');
       }
       clearInterval(interval1000);
     }, 500);

@@ -126,7 +126,7 @@ body {
     pointer-events: none;
 }
 
-#rsvp {
+#ri-page {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -166,7 +166,7 @@ body {
     pointer-events: none;
 }
 
-#innertext,
+#label-text,
 #span-text,
 #forms-id,
 #form-instructions,
@@ -177,7 +177,7 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-#contact1 {
+#contact-page {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -248,7 +248,7 @@ body {
     left: 825px;
 }
 
-#selectimg {
+#dropdown-1 {
     position: absolute;
     width: 6.4%;
     height: 40px;
@@ -258,7 +258,7 @@ body {
     pointer-events: none;
 }
 
-#selectimg2 {
+#dropdown-2 {
     position: absolute;
     width: 6.4%;
     height: 40px;
@@ -294,7 +294,7 @@ body {
     margin: 0;
 }
 
-#inner {
+#label {
     margin: 0;
     padding: 0;
     position: relative;
@@ -308,7 +308,7 @@ body {
     float: left;
 }
 
-#inner3 {
+#label-2 {
     margin: 0;
     padding: 0;
     position: relative;
@@ -322,7 +322,7 @@ body {
     float: left;
 }
 
-#innertext {
+#label-text {
     position: absolute;
     /* font-family: font2; */
     font-size: 13px;
@@ -345,7 +345,7 @@ body {
     transform: translateY(-50%);
 }
 
-#select1 {
+#select-field-1 {
     position: relative;
     float: left;
 
@@ -357,7 +357,7 @@ body {
     left: 4%;
 }
 
-#formback {
+#field-container-1 {
     position: absolute;
     width: 100%;
     height: 40px;
@@ -367,7 +367,7 @@ body {
     font-size: 0;
 }
 
-#field-container {
+#field-container-2 {
     position: absolute;
     width: 48.4%;
     height: 40px;
@@ -376,7 +376,7 @@ body {
     font-size: 0;
 }
 
-#formback3 {
+#field-container-3 {
     position: absolute;
     width: 48.4%;
     height: 40px;
@@ -386,7 +386,7 @@ body {
     font-size: 0;
 }
 
-#formback4 {
+#field-container-4 {
     position: absolute;
     width: 48.4%;
     height: 40px;
@@ -397,7 +397,7 @@ body {
     font-size: 0;
 }
 
-#formback5 {
+#field-container-5 {
     position: absolute;
     width: 48.4%;
     height: 40px;
@@ -408,7 +408,7 @@ body {
     font-size: 0;
 }
 
-#formback6 {
+#field-container-6 {
     position: absolute;
     width: 48.4%;
     height: 40px;
@@ -419,7 +419,7 @@ body {
     font-size: 0;
 }
 
-#formback7 {
+#field-container-7 {
     position: absolute;
     width: 48.4%;
     height: 40px;
@@ -430,7 +430,7 @@ body {
     font-size: 0;
 }
 
-#formback10 {
+#field-container-8 {
     position: absolute;
     width: 48.4%;
     height: 7%;
@@ -441,7 +441,7 @@ body {
     font-size: 0;
 }
 
-#formback11 {
+#field-container-9 {
     position: absolute;
     width: 100%;
     height: 21%;
@@ -454,7 +454,7 @@ body {
     padding: 0;
 }
 
-#formback8 {
+#field-container-10 {
     position: absolute;
     width: 100%;
     height: 120px;
@@ -479,7 +479,7 @@ body {
     font-family: font3;
 }
 
-#formback9 {
+#field-container-11 {
     position: absolute;
     width: 100%;
     height: 40px;
@@ -1727,7 +1727,7 @@ body {
         font-size: 13px;
     }
 
-    #innertext {
+    #label-text {
         font-size: 13px;
         line-height: 15px;
     }
