@@ -251,9 +251,13 @@ $(document).ready(function () {
 
   // I am Retard Option Selected
   $("#skip-game").click(function () {
+    $(".carousel").css('left', '0px');
+    carousel_pos = 0;
+
     $("#about-page-1").animate({
       left: '100%'
     }, 500);
+
     $("#about-page-2").animate({
       left: '0%'
     }, 500);
@@ -933,6 +937,10 @@ $(document).ready(function () {
               $("#about-page-1").animate({
                 left: '100%'
               }, 500);
+
+              $(".carousel").css('left', '0px');
+              carousel_pos = 0;
+
               $("#about-page-2").animate({
                 left: '0%'
               }, 500);
